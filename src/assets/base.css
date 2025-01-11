@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+  --vt-c-white-transparent: rgba(242, 242, 242, 0.8);
+  --white-gradient-start: rgba(255, 255, 255, 1);
+  --white-gradient-end: rgba(255, 255, 255, 0);
+  --white-modal-overlay: rgba(255, 255, 255, 0.5);
+
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+  --vt-c-black-transparent: rgba(40, 40, 40, 0.8);
+  --black-gradient-start: rgba(18, 18, 18, 1);
+  --black-gradient-end: rgba(18, 18, 18, 0);
+  --black-modal-overlay: rgba(0, 0, 0, 0.5);
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-1: #281b15;
+  --color-2: #3c4c4f;
+  --color-3: #4f443e;
+  --color-4: #552416;
+  --color-5: #6e6664;
+  --color-6: #708593;
+  --color-7: #7494b4;
+  --color-8: #7d4433;
+  --color-9: #8f431d;
+  --color-10: #9c8176;
+  --color-11: #b53d12;
+  --color-12: #bcb2b5;
+  --color-13: #d9c4ba;
+  --color-14: #eb8f5b;
+
+  --accent-1-color: #1bc570;
+  --accent-2-color: #1eac65;
+  --accent-3-color: #33eb39;
+  --accent-4-color: #f9b8b8;
+  --accent-5-color: #7ecc10;
+  --accent-6-color: #dcf7ba;
+  --accent-7-color: #ff69b4;
+
+  --accent-1-background-color: rgba(27, 197, 112, 0.9);
+  --accent-4-background-color: rgba(249, 184, 184, 0.9);
+
+  --button-1-color: #fafbfc;
+  --button-2-color: #c4c4c4;
+
+  --gradient-start: var(--white-gradient-start);
+  --gradient-end: var(--white-gradient-end);
+  --modal-overlay: var(--white-modal-overlay);
+
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+  --color-background-transparent: var(--vt-c-white-transparent);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+    --color-background-transparent: var(--vt-c-black-transparent);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+
+    --gradient-start: var(--black-gradient-start);
+    --gradient-end: var(--black-gradient-end);
+    --modal-overlay: var(--black-modal-overlay);
+  }
+}
+
+[data-theme='light'] {
+  accent-color: var(--accent-color);
+  --accent-1-color: #1bc570;
+  --accent-2-color: #1eac65;
+  --accent-3-color: #33eb39;
+  --accent-4-color: #f9b8b8;
+  --accent-5-color: #7ecc10;
+  --accent-6-color: #dcf7ba;
+
+  --accent1-background-color: rgba(27, 197, 112, 0.9);
+  --accent-4-background-color: rgba(249, 184, 184, 0.9);
+
+  --button-1-color: #fafbfc;
+  --button-2-color: #c4c4c4;
+
+  --gradient-start: var(--white-gradient-start);
+  --gradient-end: var(--white-gradient-end);
+
+  --card-color: var(--color-13);
+  --background-gradient: linear-gradient(190deg, #9bc7f3, #d0c5c8);
+--border-color: var(--color-7);
+--form-background: var(--color-12);
+
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+  --color-background-transparent: var(--vt-c-white-transparent);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+}
+
+[data-theme='dark'] {
+  --card-color: var(--color-1);
+  --background-gradient: linear-gradient(190deg, #411403, var(--vt-c-black));
+--border-color: var(--color-11);
+--form-background: var(--color-5);
+
+  --color-background: var(--vt-c-black);
+  --color-background-soft: var(--vt-c-black-soft);
+  --color-background-mute: var(--vt-c-black-mute);
+  --color-background-transparent: var(--vt-c-black-transparent);
+
+  --color-border: var(--vt-c-divider-dark-2);
+  --color-border-hover: var(--vt-c-divider-dark-1);
+
+  --color-heading: var(--vt-c-text-dark-1);
+  --color-text: var(--vt-c-text-dark-2);
+
+  --gradient-start: var(--black-gradient-start);
+  --gradient-end: var(--black-gradient-end);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+:root {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'Roboto', monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* cursor: none; */
+}

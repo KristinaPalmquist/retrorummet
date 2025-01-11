@@ -1,30 +1,60 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref, onMounted, watchEffect } from 'vue';
+import { useRouter } from 'vue-router';
+import { useStore } from '@/store';
+import MainHeader from '@/components/MainHeader.vue';
+import MainFooter from '@/components/MainFooter.vue';
+
+const router = useRouter();
+const store = useStore();
+const mainElement = ref(null);
+const headerHeight = ref(0);
+const isMobile = ref(false);
+
+const updateMainPadding = (height) => {
+  headerHeight.value = height;
+  if (mainElement.value) {
+    mainElement.value.style.paddingTop = `${headerHeight.value}px`;
+  }
+};
+
+onMounted(() => {
+  mainElement.value = document.querySelector('main');
+  if (mainElement.value) {
+    mainElement.value.style.paddingTop = `${headerHeight.value}px`;
+  }
+  isMobile.value = window.matchMedia('(max-width: 768px)').matches;
+});
+
+watchEffect(() => {
+  if (store.getSearchQuery !== '') {
+    router.push({
+      name: 'Products',
+      query: { search: store.getSearchQuery },
+    });
+  }
+  if (mainElement.value) {
+    mainElement.value.style.paddingTop = `${headerHeight.value}px`;
+  }
+});
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <MainHeader
+    @header-height="updateMainPadding"
+    @update:searchQuery="store.setSearchQuery($event)"
+  />
+  <main>
+    <router-view
+      :search-query="store.searchQuery"
+      @productClicked="store.resetSearchQuery()"
+    ></router-view>
+  </main>
+  <MainFooter />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+main {
+  min-height: 50vh;
 }
 </style>

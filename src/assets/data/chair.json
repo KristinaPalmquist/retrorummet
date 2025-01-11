@@ -1,0 +1,351 @@
+[
+  {
+    "id": 1,
+    "name": "Doris",
+    "category": "chair",
+    "description": "Orange arm chair. Very comfortable",
+    "images": ["../assets/img/chair/doris.jpg", "../assets/img/chair/doris2.jpg"],
+    "price": 29.99,
+    "specifications": {
+      "Color": "Orange",
+      "Size": "n/a",
+      "Material": "Wood / Fabric"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Erik",
+    "category": "chair",
+    "description": "Dark orange svivel arm chair. ",
+    "images": "../assets/img/chair/erik.jpg",
+    "price": 49.99,
+
+    "specifications": {
+      "Color": "Orange",
+      "Size": "n/a",
+      "Material": "Fabric"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Fredrik",
+    "category": "chair",
+    "description": "High back armchair in pale blue velvet",
+    "images": "../assets/img/chair/fredrik.jpg",
+    "price": 99.99,
+
+    "specifications": {
+      "Color": "Blue",
+      "Size": "n/a",
+      "Material": "Velvet"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Gote",
+    "category": "chair",
+    "description": "19th century, high shine, office chair",
+    "images": ["../assets/img/chair/gote.jpg"],
+    "price": 99.99,
+
+    "specifications": {
+      "Color": "Brown",
+      "Size": "n/a",
+      "Material": "Wood"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Hilda",
+    "category": "chair",
+    "description": "Great looking, low back chair in beige and black",
+    "images": ["../assets/img/chair/hilda.jpg"],
+    "price": 29.99,
+
+    "specifications": {
+      "Color": "Beige / Black",
+      "Size": "n/a",
+      "Material": "Wood"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Ina",
+    "category": "chair",
+    "description": "Comfortable, stylish chair in tan",
+    "images": ["../assets/img/chair/ina.jpg"],
+    "price": 129.99,
+    "specifications": {
+      "Color": "Tan",
+      "Size": "n/a",
+      "Material": "Cotton Canvas / Wood"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Johan",
+    "category": "chair",
+    "description": "Retro, floral lawn chair in orange",
+    "images": ["../assets/img/chair/johan.jpg"],
+    "price": 49.99,
+    "specifications": {
+      "Color": "Orange",
+      "Size": "n/a",
+      "Material": "Polyester / Metal"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Karsten",
+    "category": "chair",
+    "description": "Regal armchair in eggshell and wood.",
+    "images": [
+      "../assets/img/chair/karsten.jpg",
+      "../assets/img/chair/karsten2.jpg"
+    ],
+    "price": 159.99,
+    "specifications": {
+      "Color": "Eggshell / Brown",
+      "Size": "n/a",
+      "Material": "Wood / Silk"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Great product!",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "-"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a bag",
+        "author": "Sammy"
+      },
+      {
+        "rating": 5,
+        "comment": "Just awesome",
+        "author": "Anonymous"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Lena",
+
+    "category": "chair",
+    "description": "Mid century, black leather chair",
+    "images": ["../assets/img/chair/lena.jpg", "../assets/img/chair/lena2.jpg"],
+    "price": 69.99,
+
+    "specifications": {
+      "Color": "Black / Brown",
+      "Size": "n/a",
+      "Material": "Teak / Leather"
+    },
+    "reviews": [
+      {
+        "rating": 3,
+        "comment": "This is a leather chair",
+        "author": "Jane"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "Looks like shit",
+        "author": "Samantha X"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Marten",
+    "category": "chair",
+    "description": "Mid century, danish white chair",
+    "images": ["../assets/img/chair/marten.jpg"],
+    "price": 69.99,
+    "specifications": {
+      "Color": "White / Brown",
+      "Size": "n/a",
+      "Material": "Teak / Fabric"
+    },
+    "reviews": [
+      {
+        "rating": 3,
+        "comment": "This is a chair",
+        "author": "Jane"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "Looks like shit",
+        "author": "Samantha X"
+      }
+    ]
+  }
+]

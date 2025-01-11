@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Stella",
+    "category": "light",
+    "description": "Floor lamp with a wooden base and a fabric shade.",
+    "images": ["../assets/img/light/stella.jpg"],
+    "price": 19.99,
+    "specifications": {
+      "color": "Brown / Beige",
+      "size": "L",
+      "material": "Wood / Fabric"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Jenny",
+    "category": "light",
+    "description": "Gives a warm and cozy light.",
+    "images": ["../assets/img/light/jenny.jpg"],
+    "price": 9.99,
+    "specifications": {
+      "color": "Orange",
+      "size": "M",
+      "material": "Glass / Metal"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Selena",
+    "category": "sideboard",
+    "description": "Warm tone, practical storage.",
+    "images": ["../assets/img/sideboard/selena.jpg"],
+    "price": 29.99,
+    "specifications": {
+      "color": "Brown",
+      "size": "n/a",
+      "material": "Wood"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Uno",
+    "category": "sideboard",
+    "description": "Stylish and simple sideboard.",
+    "images": ["../assets/img/sideboard/uno.jpg"],
+    "price": 39.99,
+    "specifications": {
+      "color": "Brown",
+      "size": "n/a",
+      "material": "Wood"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is great for outdoors activities",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "beautiful jacket",
+        "author": "x"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a jacket",
+        "author": "Dorrie"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Vera",
+    "category": "sideboard",
+    "description": "Danish sideboard.",
+    "images": ["../assets/img/sideboard/vera.jpg"],
+    "price": 49.99,
+    "specifications": {
+      "color": "Brown",
+      "size": "n/a",
+      "material": "Teak"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Warm",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "Comfortable",
+        "author": "Janne Svensson"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Wolfgang",
+    "category": "sideboard",
+    "description": "Light wood sideboard with a modern touch. Will look great in any room.",
+    "images": ["../assets/img/sideboard/wolfgang.jpg"],
+    "price": 199.99,
+    "specifications": {
+      "color": "Brown",
+      "size": "n/a",
+      "material": "Wood"
+    },
+    "reviews": [
+      {
+        "rating": 1,
+        "comment": "-",
+        "author": "Olof Skötkonung"
+      }
+    ]
+  }
+]

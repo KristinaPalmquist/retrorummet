@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "chair",
+    "folder": "chair",
+    "imagename": "fredrik",
+    "image": "../assets/img/chair/fredrik.jpg"
+  },
+  {
+    "id": 2,
+    "name": "table",
+    "folder": "table",
+    "imagename": "cecilia",
+    "image": "../assets/img/table/cecilia.jpg"
+  },
+  {
+    "id": 3,
+    "name": "sideboard",
+    "folder": "sideboard",
+    "imagename": "vera",
+    "image": "../assets/img/sideboard/vera.jpg"
+  },
+  {
+    "id": 4,
+    "name": "light",
+    "folder": "light",
+    "imagename": "jenny",
+    "image": "../assets/img/light/jenny.jpg"
+  },
+  {
+    "id": 5,
+    "name": "decor",
+    "folder": "decor",
+    "imagename": "nina",
+    "image": "../assets/img/decor/nina.jpg"
+  }
+]

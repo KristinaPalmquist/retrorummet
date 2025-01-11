@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "name": "Nina",
+    "category": "decor",
+    "description": "Beautifull wall mirror, can be hung in any room.",
+    "images": ["../assets/img/decor/nina.jpg"],
+    "price": 14.99,
+    "specifications": {
+      "color": "Brown",
+      "size": "n/a",
+      "material": "Wood"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Olof",
+    "category": "decor",
+    "description": "Kitchy wall clock in bright orange and black.",
+    "images": ["../assets/img/decor/olof.jpg"],
+    "price": 19.99,
+    "specifications": {
+      "color": "Orange / Black",
+      "size": "n/a",
+      "material": "Plastic"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Pexel",
+    "category": "decor",
+    "description": "Bold wall clock in mid century fun design.",
+    "images": ["../assets/img/decor/pexel.jpg"],
+    "price": 99.99,
+    "specifications": {
+      "color": "Multi",
+      "size": "n/a",
+      "material": "Wood / Metal"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Rita",
+    "category": "decor",
+    "description": "Beautiful record player",
+    "images": ["../assets/img/decor/rita.jpg", "../assets/img/decor/rita2.jpg"],
+    "price": 12.99,
+    "specifications": {
+      "color": "Silver / Brown / Black",
+      "size": "n/a",
+      "material": "Wood / Metal / Plastic"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Soren",
+    "category": "decor",
+    "description": "Persian rug that will be a jewel in any room.",
+    "images": "../assets/img/decor/soren.jpg",
+    "price": 17.99,
+    "specifications": {
+      "color": "Multi",
+      "size": "n/a",
+      "material": "Wool"
+    },
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "This is a great product",
+        "author": "John Doe"
+      },
+      {
+        "rating": 4,
+        "comment": "This is a good product",
+        "author": "Jane Doe"
+      },
+      {
+        "rating": 2,
+        "comment": "This is a product",
+        "author": "Sam Doe"
+      },
+      {
+        "rating": 1,
+        "comment": "This is a bad product",
+        "author": "Samantha Doe"
+      }
+    ]
+  }
+]
