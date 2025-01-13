@@ -2,12 +2,10 @@
 import CategoriesSmall from '@/components/CategoriesSmall.vue';
 import { ref, onMounted } from 'vue';
 const companyName = ref('Retro Rummet');
-const heroImageSrc = ref('@/assets/img/hero.jpg');
 const heroRef = ref(null);
 const categoriesRef = ref(null);
 
 onMounted(() => {
-  console.log(heroImageSrc.value);
   const heroElement = heroRef.value;
   if (heroElement) {
     heroElement.style.position = 'absolute';
@@ -49,10 +47,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="home-view" class="component-container">
+  <div id="home-view">
     <div class="hero" ref="heroRef">
+
+      <div class="fade-up"></div>
       <img
-        :src="heroImageSrc"
+        src="@/assets/img/hero.jpg"
         alt="Welcome to Retro Rummet"
         class="hero-image"
       />
@@ -67,31 +67,36 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <section class="introduction">
-      <h2>About Us</h2>
-      <p>
-        At {{ companyName }}, we are passionate about sustainable living. Our
-        curated collection of pre-loved furniture offers unique styles and
-        timeless pieces that you won't find anywhere else.
-      </p>
-    </section>
-    <section class="features">
-      <h2>Our Features</h2>
-      <ul>
-        <li>
-          <strong>Curated Selection:</strong> Each item is carefully selected to
-          ensure quality and style.
-        </li>
-        <li>
-          <strong>Sustainable Living:</strong> By choosing second-hand, you're
-          making a positive impact on the environment.
-        </li>
-        <li>
-          <strong>Exceptional Customer Service:</strong> Our team is here to
-          help you find the perfect piece and answer any questions you may have.
-        </li>
-      </ul>
-    </section>
+    <div class="component-container">
+      <div class="intro-sections">
+        <section class="introduction">
+          <h2>About Us</h2>
+          <p>
+            At {{ companyName }}, we are passionate about sustainable living.
+            Our curated collection of pre-loved furniture offers unique styles
+            and timeless pieces that you won't find anywhere else.
+          </p>
+        </section>
+        <section class="features">
+          <h2>Our Features</h2>
+          <ul>
+            <li>
+              <strong>Curated Selection:</strong> Each item is carefully
+              selected to ensure quality and style.
+            </li>
+            <li>
+              <strong>Sustainable Living:</strong> By choosing second-hand,
+              you're making a positive impact on the environment.
+            </li>
+            <li>
+              <strong>Exceptional Customer Service:</strong> Our team is here to
+              help you find the perfect piece and answer any questions you may
+              have.
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
     <section class="categories">
       <div class="categories-wrapper" ref="categoriesRef">
         <h2>Browse our categories</h2>
@@ -104,27 +109,49 @@ onMounted(() => {
 <style scoped>
 #home-view {
   background-color: var(--background-color);
+  position: absolute;
+  top: 0;
 }
 .hero {
   position: relative;
-  text-align: center;
-  overflow: hidden;
-  z-index: -2;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 0;
+  /* z-index: 0; */
 }
 
 .hero-image {
-  background-color: var(--background-color);
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  z-index: -2;
+  /* z-index: 1; */
+  border: none;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* background: rgba(0, 0, 0, 0.5); */
+  background: var(--hero-overlay);
+  /* z-index: 2; */
+}
+
+.fade-up {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 70%;
+  height: 30%;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
   border: none;
 }
 
@@ -157,6 +184,7 @@ onMounted(() => {
   width: clamp(300px, 50%, 900px);
   /* height: max-content; */
   text-align: center;
+  z-index: 2;
 }
 
 .hero-text {
@@ -176,34 +204,47 @@ onMounted(() => {
   margin-bottom: 1rem;
 }
 
-/* .hero-text */
-
-.introduction {
-  margin-top: 100vh;
+.intro-sections {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  margin-top: calc(100vh + 4rem);
+  /* margin-top: 2rem; */
 }
+
+.features ul li {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+/* .introduction {
+  margin-top: 100vh;
+  
+} */
 
 .features {
   margin-top: 2rem;
 }
 
 .features ul {
-  list-style-type: none;
+  /* list-style-type: none; */
   padding: 0;
 }
 
 .features li {
+  list-style-type: none;
   margin-bottom: 1rem;
 }
 
 .categories {
-  position: relative;
-  max-width: 100%;
+  /* position: relative;  */
+  width: 100vw;
+  /* max-width: 100%; */
 }
 
 .categories-wrapper {
   /* position: absolute;
   width: 100%; */
-  /* max-width: 100vw; */
+  max-width: 100vw;
   overflow: hidden;
 }
 
@@ -223,8 +264,8 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-} */
-  /* .categories-wrapper {
+} 
+ .categories-wrapper {
     left: 1rem;
     max-width: calc(100vw - 2rem);
   } */
