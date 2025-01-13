@@ -27,7 +27,7 @@ const { title, imageSrc } = props;
 
 <style scoped>
 #basic-card {
-  width: 100%;
+ width: 200px;
   border-radius: 1rem;
   break-inside: avoid;
   text-align: center;
@@ -45,11 +45,12 @@ const { title, imageSrc } = props;
 
 .card-content {
   padding-top: 0;
-  padding-bottom: 0.5rem;
+  /* padding-bottom: 0.5rem; */
 }
 
 .card-content h2 {
   margin: 0;
+  padding-bottom: 0.5rem;
   /* font-size: 1rem; */
 }
 </style>

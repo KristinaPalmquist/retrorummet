@@ -25,14 +25,13 @@ const resolveImagePath = (name) => {
 </template>
 
 <style scoped>
-
- #category-card-small {
+#category-card-small {
   width: 100%;
   border-radius: 1rem;
   break-inside: avoid;
   text-align: center;
   transition: transform 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
 /*
