@@ -38,15 +38,20 @@ const updateWindowSize = () => {
 // };
 
 const navbarItemStyle = computed(() => {
+  console.log('window height: ', windowHeight.value);
   if (windowWidth.value > 600) {
     const backgroundHeight = windowHeight.value - 30;
+    console.log('background height: ', backgroundHeight);
     const itemHeight = backgroundHeight / routes.length;
+    console.log('item height: ', itemHeight);
     // const fontSize = Math.min(itemHeight * 0.5, 50);
-    const padding = Math.min(itemHeight * 0.05, 3);
+    const padding = Math.min(itemHeight * 0.5, 2);
+    console.log('padding: ', padding);
     const fontSize = 90 / routes.length - padding * 2;
+    console.log('font size: ', fontSize);
     return {
       fontSize: `${fontSize}vh`,
-      padding: `${padding}px`,
+      padding: `${padding}rem`,
     };
   } else if (windowWidth.value > 380) {
     return {
@@ -97,13 +102,12 @@ onUnmounted(() => {
             <ul>
               <li v-for="(route, index) in routes" :key="route.name">
                 <a href="#" @click="handleRouting($event, route.path)">
-                  <span
-                    class="numbers navbar-numbers"
-                    :style="navbarNumbersStyle"
+                  <span class="navbar-numbers" :style="navbarNumbersStyle"
                     >0{{ index + 1 }}.
                   </span>
-                  <span :style="navbarItemStyle">{{ route.name }}</span>
-                  <!-- {{ route.name }} -->
+                  <span class="navbar-item" :style="navbarItemStyle">{{
+                    route.name
+                  }}</span>
                 </a>
               </li>
             </ul>
@@ -115,9 +119,9 @@ onUnmounted(() => {
       @click="toggleMenu"
       :class="['menu-button', { 'menu-button-open': isOpen }]"
     >
-      <span :class="{ line: true, line1: true, open: isOpen }"></span>
-      <span :class="{ line: true, line2: true, open: isOpen }"></span>
-      <span :class="{ line: true, line3: true, open: isOpen }"></span>
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+      <span class="line line3"></span>
     </button>
   </div>
 </template>
@@ -132,10 +136,9 @@ onUnmounted(() => {
 }
 
 .menu-button {
-  position: absolute;
+  position: relative;
   top: 0rem;
   right: 0rem;
-  transform: translate(50%, -50%);
   z-index: 101;
   display: flex;
   flex-direction: column;
@@ -147,20 +150,16 @@ onUnmounted(() => {
   border: none;
   padding: 0;
   z-index: 1000;
-}
 
-.menu-button-open {
-  transform: translate(3rem, 1rem);
+  transition: all 0.3s linear;
 }
 
 .line {
   width: 2rem;
   height: 0.25rem;
-  background: var(--accent-3-color);
+  background-color: var(--text-color);
   border-radius: 10px;
-  transition: all 0.3s linear;
-  /* position: relative;
-  transform-origin: 1px; */
+  transition: transform 0.3s linear, opacity 0.3s linear;
 }
 
 .line1 {
@@ -176,17 +175,16 @@ onUnmounted(() => {
   transform: rotate(0);
 }
 
-.line1.open {
-  transform: rotate(405deg) translate(7px, 7px);
+.menu-button-open .line1 {
+  transform: rotate(405deg) translate(8px, 7px);
 }
 
-.line2.open {
+.menu-button-open .line2 {
   opacity: 0;
-  /* transform: translateX(20px); */
 }
 
-.line3.open {
-  transform: rotate(315deg) translate(7px, -7px);
+.menu-button-open .line3 {
+  transform: rotate(315deg) translate(8px, -7px);
 }
 
 .modal-overlay {
@@ -197,7 +195,8 @@ onUnmounted(() => {
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--modal-overlay);
+  background-color: var(--modal-background);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,7 +210,9 @@ onUnmounted(() => {
   right: 2rem;
   width: calc(100vw - 4rem);
   height: calc(100vh - 3rem);
-  background-color: var(--accent-4-background-color);
+  /* background-color: var(--accent-4-background-color); */
+  /* background-color: var(--footer-background-color); */
+  background-color: var(--modal-overlay);
   color: var(--text-color);
   border-radius: 1rem;
   display: flex;
@@ -249,7 +250,8 @@ nav ul li a .navbar-numbers {
 
 nav ul li a:hover {
   background-color: transparent;
-  font-family: 'Monoton', sans-serif;
+  /* font-family: 'Monoton', sans-serif; */
+  /* font-style: italic; */
   font-weight: 400;
   font-style: normal;
   font-size: 5rem;
@@ -263,8 +265,13 @@ nav ul li a:hover {
 }
 
 .fullscreen-menu nav ul li a:hover {
-  color: var(--color-primary);
+  color: var(--link-color);
 }
+
+/* .navbar-item:hover {
+  font-style: italic;
+
+} */
 
 @media only screen and (max-width: 1024px) {
   .navbar-background {
@@ -283,7 +290,33 @@ nav ul li a:hover {
   }
 
   .menu-button {
-    margin: 3px 0;
+    transition: none;
+  }
+
+  .menu-button-open {
+    transform: translate(4.4rem, 2.3rem);
+  }
+
+  .menu-button .line {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: var(--text-color);
+    border-radius: 10px;
+    transition: none;
+    transition: transform 0.3s linear 0.1s, opacity 0.3s linear 0.1s;
+  }
+
+  .menu-button-open .line1 {
+    transition: transform 0.3s linear;
+  }
+
+  .menu-button-open .line2 {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+  }
+
+  .menu-button-open .line3 {
+    transition: transform 0.3s linear;
   }
 
   #main-navbar .navbar {
@@ -306,5 +339,37 @@ nav ul li a:hover {
   .navbar a:hover {
     font-size: 3rem;
   }
+}
+
+@media only screen and (max-width: 400px) {
+  /* .menu-button {
+    transition: none;
+  } */
+
+  .menu-button-open {
+    transform: translate(3.6rem, 2.3rem);
+  }
+  /* 
+  .menu-button .line {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: var(--text-color);
+    border-radius: 10px;
+    transition: none;
+    transition: transform 0.3s linear 0.1s, opacity 0.3s linear 0.1s;
+  }
+
+  .menu-button-open .line1 {
+    transition: transform 0.3s linear;
+  }
+
+  .menu-button-open .line2 {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+  }
+
+  .menu-button-open .line3 {
+    transition: transform 0.3s linear;
+  } */
 }
 </style>

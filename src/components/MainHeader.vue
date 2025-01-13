@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref, onMounted, onUnmounted, onUpdated, watch } from 'vue';
+import { ref, onMounted, onUnmounted, onUpdated, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useStore } from '@/store';
 import MainNavbar from '@/components/MainNavbar.vue';
@@ -18,21 +18,23 @@ const headerHeight = ref(0);
 const titleRef = ref(null);
 const isMobile = ref(false);
 
-const showLoginBtn = computed(() => !isOpen.value);
+// const showLoginBtn = computed(() => !isOpen.value);
 
 const emits = defineEmits(['headerHeight']);
 
 const handleScroll = () => {
-  if (window.scrollY > 50) {
-    isScrolled.value = true;
-    if (isMobile.value) {
-      header.value.style.transform = `translateY(-${
-        titleRef.value.offsetHeight + 32
-      }px)`;
+  if (!isOpen.value) {
+    if (window.scrollY > 50) {
+      isScrolled.value = true;
+      if (isMobile.value) {
+        header.value.style.transform = `translateY(-${
+          titleRef.value.offsetHeight + 32
+        }px)`;
+      }
+    } else {
+      isScrolled.value = false;
+      header.value.style.transform = 'translateY(0)';
     }
-  } else {
-    isScrolled.value = false;
-    header.value.style.transform = 'translateY(0)';
   }
 };
 
@@ -100,8 +102,9 @@ watch(headerHeight, (newHeight) => {
         <div class="theme">
           <ThemeToggle v-if="!isOpen" />
         </div>
-
-        <MainNavbar @update:isOpen="isOpen = $event" class="nav" />
+        <div class="nav">
+          <MainNavbar @update:isOpen="isOpen = $event" />
+        </div>
       </div>
     </div>
   </header>
@@ -137,12 +140,12 @@ watch(headerHeight, (newHeight) => {
 }
 a {
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--text-color);
 }
 
 .header-title {
   transition: transform 0.5s ease-in-out;
-  color: var(--color-text);
+  /* color: var(--color-text); */
 }
 
 /* a:hover {
@@ -171,28 +174,29 @@ a {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
     border: none;
   }
-  /* #main-header.open {
-     background: transparent;
-     backdrop-filter: none;
-     box-shadow: none;
-     border: none;
-   } */
+  #main-header.open {
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    border: none;
+  }
   .header-content {
     margin: 1rem auto;
   }
   .company-name {
     font-size: 2.5rem;
+    /* padding-bottom: 0.5rem; */
     /* color: rgb(51, 235, 57);
     text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.9); */
-    text-shadow: 0px 0px 16px rgb(51, 235, 57);
+    /* text-shadow: 0px 0px 16px rgb(51, 235, 57); */
     /* text-shadow: 0px 0px 12px rgba(51, 235, 57, 0.9); */
   }
-  .login {
+  /* .login {
     display: none;
-  }
+  } */
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 780px) {
   .company-name {
     font-size: 1.8rem;
   }
@@ -219,8 +223,12 @@ a {
 
   .nav-btns {
     width: 100%;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    /* display: grid;
+    grid-template-columns: 2fr 1fr 1fr; */
+    justify-content: space-evenly;
+    gap: 1rem;
+    /* flex-wrap: wrap; */
+    padding-top: 0.5rem;
   }
 
   .nav-btns > * {
@@ -231,12 +239,9 @@ a {
     margin: 0;
   }
 
-  .nav-btns .theme {
-    display: none;
-  }
-
-  .nav-btns .login {
-    display: none;
+  .open .nav-btns .nav {
+    right: 0;
+    top: 0;
   }
 }
 
@@ -244,6 +249,12 @@ a {
   .company-name {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
+  }
+
+  
+
+  .nav-btns .theme {
+    display: none;
   }
 }
 </style>
