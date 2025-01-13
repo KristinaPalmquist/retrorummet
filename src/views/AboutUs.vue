@@ -2,96 +2,200 @@
 
 <template>
   <div id="about-us" class="component-container">
+    <h1 class="header-about">About Us</h1>
     <section class="introduction">
-      <h1>About Us</h1>
-      <p>
-        Welcome to Retro Retreat, your go-to destination for preworn fashion,
-        second-hand, and vintage clothing. Our mission is to promote sustainable
-        fashion by offering a curated selection of unique and timeless pieces.
+      <!-- <div class="content-about"> -->
+      <p class="content-about1">
+        Welcome to RetroRummet, your go-to destination for preowned furniture
+        and decorations. Our mission is to promote sustainable living by
+        offering a curated selection of unique and timeless pieces.
       </p>
-      <p>
+      <div class="empty-about1"></div>
+      <p class="content-about2">
         Over the years, we have expanded our collection and services, reaching
-        eco-conscious customers worldwide.
+        eco-conscious customers worldwide. We operate exclusively online, with
+        no physical showroom, ensuring that our operations are as eco-friendly
+        as possible.
       </p>
+      <div class="empty-about2"></div>
+      <p class="content-about3">
+        Here's how our site works: Browse through our collection and find an
+        item that you like. Each item page has a form that you can use to
+        contact us with any questions or comments. This form helps us know which
+        item your question or comment is linked to, ensuring a smooth and
+        efficient communication process.
+      </p>
+      <div class="empty-about3"></div>
+      <!-- </div> -->
+
+      <div class="image image1"></div>
     </section>
+
     <section class="team">
-      <h2>Our Team</h2>
-      <p>
+      <h2 class="header-team">Our Team</h2>
+      <div class="empty-team1"></div>
+      <p class="content-team">
         Our team is composed of dedicated professionals who are passionate about
-        sustainable fashion. From our customer service representatives to our
+        sustainable living. From our customer service representatives to our
         product curators, everyone plays a crucial role in our mission to make
-        fashion more sustainable.
+        home decor more sustainable.
       </p>
+      <div class="empty-team2"></div>
+      <div class="image image2"></div>
     </section>
     <section class="values">
-      <h2>Our Values</h2>
-      <ul>
-        <li>
-          <strong>Customer Satisfaction:</strong> We prioritize our customers'
-          needs and strive to exceed their expectations with every purchase.
-        </li>
-        <li>
-          <strong>Sustainability:</strong> We are committed to reducing fashion
-          waste by promoting the reuse and recycling of clothing.
-        </li>
-        <li>
-          <strong>Integrity:</strong> We conduct our business with honesty and
-          transparency, building trust with our customers and partners.
-        </li>
-        <li>
-          <strong>Teamwork:</strong> We believe in the power of collaboration
-          and work together to achieve our sustainability goals.
-        </li>
-      </ul>
+      <h2 class="header-values">Our Values</h2>
+      <div class="content-values">
+        <div>
+          <h2>Customer Satisfaction</h2>
+          We prioritize our customers' needs and strive to exceed their
+          expectations with every purchase.
+        </div>
+        <div>
+          <h2>Sustainability</h2>
+          We are committed to reducing waste by promoting the reuse and
+          recycling of furniture and decorations.
+        </div>
+
+        <div>
+          <h2>Integrity</h2>
+          We conduct our business with honesty and transparency, building trust
+          with our customers and partners.
+        </div>
+        <div class="empty-values"></div>
+      </div>
+
+      <div class="image image3"></div>
     </section>
   </div>
-
-  <!-- <div class="about-us">
-
-
-    <h2>About Us</h2>
-    <section class="mission">
-      <h3>Our Mission</h3>
-      <p>
-        Our mission is to provide the best products and services to our customers, ensuring their satisfaction and loyalty. We strive to innovate and improve continuously to meet the evolving needs of our clients.
-      </p>
-    </section>
-    <section class="history">
-      <h3>Our History</h3>
-      <p>
-        Founded in 2010, our company has grown from a small startup to a leading player in the industry. Over the years, we have expanded our product range and services, reaching customers worldwide.
-      </p>
-    </section>
-    <section class="team">
-      <h3>Our Team</h3>
-      <p>
-        Our team is composed of dedicated professionals who are passionate about what they do. From our customer service representatives to our product developers, everyone plays a crucial role in our success.
-      </p>
-    </section>
-    <section class="values">
-      <h3>Our Values</h3>
-      <ul>
-        <li><strong>Customer Satisfaction:</strong> We prioritize our customers' needs and work tirelessly to exceed their expectations.</li>
-        <li><strong>Innovation:</strong> We embrace change and continuously seek new ways to improve our products and services.</li>
-        <li><strong>Integrity:</strong> We conduct our business with honesty and transparency, building trust with our customers and partners.</li>
-        <li><strong>Teamwork:</strong> We believe in the power of collaboration and work together to achieve our goals.</li>
-      </ul>
-    </section>
-  </div> -->
 </template>
 
 <style scoped>
-ul {
-  list-style-type: none;
-  padding: 0;
+.header-about {
+  margin-bottom: 2rem;
 }
 
-li {
-  margin-bottom: 0.5rem;
+.introduction {
+  padding: 0 0 5rem 0;
 }
 
-li strong {
-  display: inline-block;
-  width: 150px;
+.team,
+.values {
+  padding: 5rem 0;
+}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-radius: 2rem;
+}
+
+.introduction {
+  display: grid;
+  grid-template-areas:
+    'content-about1 content-about1'
+    'image1 empty-about1' 'image1 content-about2'
+    'image1 empty-about2'
+    'image1 content-about3'
+    'empty-about3 content-about3';
+  gap: 2.5rem;
+}
+
+.introduction .image1 {
+  grid-area: image1;
+  background-image: url('../assets/img/chair/gote.jpg');
+  width: 30vw;
+}
+.introduction .content-about1 {
+  grid-area: content-about1;
+}
+.introduction .empty-about1 {
+  grid-area: empty-about1;
+  height: 10vh;
+}
+.introduction .content-about2 {
+  grid-area: content-about2;
+}
+.introduction .empty-about2 {
+  grid-area: empty-about2;
+  height: 5vh;
+}
+.introduction .content-about3 {
+  grid-area: content-about3;
+}
+
+.introduction .empty-about3 {
+  height: 5vh;
+}
+
+.team {
+  display: grid;
+  grid-template-areas:
+    'empty-team1 image2'
+    'header-team image2'
+    'content-team image2'
+    'empty-team2 image2';
+  gap: 2.5rem;
+}
+
+.team .header-team {
+  grid-area: header-team;
+}
+
+.team .empty-team1 {
+  grid-area: empty-team1;
+  height: 15vh;
+}
+
+.team .content-team {
+  grid-area: content-team;
+}
+
+.team .empty-team2 {
+  grid-area: empty-team2;
+  height: 5vh;
+}
+
+.team .image2 {
+  grid-area: image2;
+  background-image: url('../assets/img/decor/pexel.jpg');
+  width: 40vw;
+}
+
+.values {
+  display: grid;
+  grid-template-areas:
+    'image3 header-values'
+    'image3 content-values'
+    'image3 empty-values';
+  gap: 2.5rem;
+}
+
+.values .header-values {
+  grid-area: header-values;
+}
+
+.values .content-values {
+  grid-area: content-values;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+/* .values .content-values h2 {
+  margin: 0;
+  padding-bottom: 0;
+} */
+
+.values .empty-values {
+  grid-area: empty-values;
+  height: 10vh;
+}
+
+.values .image3 {
+  grid-area: image3;
+  background-image: url('../assets/img/sideboard/uno.jpg');
+  width: 40vw;
+  /* height: 50vh; */
 }
 </style>
