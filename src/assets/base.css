@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); */
 
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
@@ -8,7 +8,11 @@
   --vt-c-white-transparent: rgba(242, 242, 242, 0.8);
   --white-gradient-start: rgba(255, 255, 255, 1);
   --white-gradient-end: rgba(255, 255, 255, 0);
-  --white-modal-overlay: rgba(255, 255, 255, 0.5);
+  --light-modal-overlay: rgba(255, 255, 255, 0.9);
+  --light-modal-background: rgba(0, 0, 0, 0.05);
+  --light-hero-overlay: rgba(0, 0, 0, 0.2);
+  --light-link-color: var(--color-7);
+
 
   --vt-c-black: #181818;
   --vt-c-black-soft: #222222;
@@ -16,7 +20,10 @@
   --vt-c-black-transparent: rgba(40, 40, 40, 0.8);
   --black-gradient-start: rgba(18, 18, 18, 1);
   --black-gradient-end: rgba(18, 18, 18, 0);
-  --black-modal-overlay: rgba(0, 0, 0, 0.5);
+  --dark-modal-overlay: rgba(0, 0, 0, 0.8);
+  --dark-modal-background: rgba(255, 255, 255, 0.1);
+  --dark-hero-overlay: rgba(0, 0, 0, 0.2);
+  --dark-link-color: var(--color-11);
 
   --vt-c-indigo: #2c3e50;
 
@@ -64,7 +71,6 @@
 
   --gradient-start: var(--white-gradient-start);
   --gradient-end: var(--white-gradient-end);
-  --modal-overlay: var(--white-modal-overlay);
 
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
@@ -95,7 +101,9 @@
 
     --gradient-start: var(--black-gradient-start);
     --gradient-end: var(--black-gradient-end);
-    --modal-overlay: var(--black-modal-overlay);
+    --modal-overlay: var(--dark-modal-overlay);
+
+    --modal-background: var(--dark-modal-background);
   }
 }
 
@@ -118,9 +126,16 @@
   --gradient-end: var(--white-gradient-end);
 
   --card-color: var(--color-13);
+  --background-color: #fff;
   --background-gradient: linear-gradient(190deg, #9bc7f3, #d0c5c8);
---border-color: var(--color-7);
---form-background: var(--color-12);
+  --footer-background-color: var(--vt-c-white-soft);
+  --border-color: var(--color-7);
+  --form-background: var(--color-12);
+  --modal-overlay: var(--light-modal-overlay);
+  --modal-background: var(--light-modal-background);
+  --hero-overlay: var(--light-hero-overlay);
+  --text-color: #000;
+  --link-color: var(--light-link-color);
 
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
@@ -138,9 +153,16 @@
 
 [data-theme='dark'] {
   --card-color: var(--color-1);
+  --background-color: var(--vt-c-black);
   --background-gradient: linear-gradient(190deg, #411403, var(--vt-c-black));
---border-color: var(--color-11);
---form-background: var(--color-5);
+  --footer-background-color: #000;
+  --border-color: var(--color-11);
+  --form-background: var(--color-5);
+  --modal-overlay: var(--dark-modal-overlay);
+  --modal-background: var(--dark-modal-background);
+  --hero-overlay: var(--dark-hero-overlay);
+  --text-color: #fff;
+  --link-color: var(--dark-link-color);
 
   --color-background: var(--vt-c-black);
   --color-background-soft: var(--vt-c-black-soft);
@@ -174,16 +196,14 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
+  background: var(--background-color);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
-  font-family: 'Roboto', monospace;
+  font-family: Helvetica, Arial, sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
-  font-size: 15px;
+  font-size: 1.2rem;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* cursor: none; */
 }
