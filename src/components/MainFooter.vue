@@ -6,7 +6,7 @@ const currentYear = new Date().getFullYear();
   <footer id="main-footer">
     <div class="footer-content">
       <div class="footer-section about">
-        <h2>About</h2>
+        <h2>About Us</h2>
         <p>
           We are a company dedicated to providing the best products and services
           to our customers.
@@ -22,12 +22,12 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
       <div class="footer-section contact">
-        <h2>Contact</h2>
+        <h2>Contact Us</h2>
         <p>Email: info@example.com</p>
         <p>Phone: +123 456 7890</p>
       </div>
       <div class="footer-section social">
-        <h2>Follow</h2>
+        <h2>Follow Us</h2>
         <ul>
           <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
           <li><a href="https://x.com" target="_blank">Twitter</a></li>
@@ -43,16 +43,14 @@ const currentYear = new Date().getFullYear();
 
 <style scoped>
 #main-footer {
-  /* background-color: var(--background-color); */
-  background-color: var(--color-background-transparent);
+  background-color: var(--footer-background-color);
   width: 100%;
   padding: 2rem;
   z-index: 10;
   display: flex;
   flex-direction: column;
 }
-
-#main-footer .footer-content {
+.footer-content {
   width: clamp(300px, 80vw, 1200px);
   display: flex;
   justify-content: space-between;
@@ -101,10 +99,10 @@ const currentYear = new Date().getFullYear();
   .footer-section ul li {
     margin-left: 0;
   }
-
+/* 
   .footer-section.about,
   .footer-section.links {
     display: none;
-  }
+  } */
 }
 </style>

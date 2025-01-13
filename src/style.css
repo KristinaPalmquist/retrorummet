@@ -1,7 +1,5 @@
 @import './assets/base.css';
 
-
-
 #app {
   width: 100vw;
   min-height: 100vh;
@@ -83,7 +81,6 @@ a {
   font-style: italic;
 }
 
-
 form {
   display: flex;
   flex-direction: column;
@@ -113,8 +110,10 @@ textarea {
 
 @media (hover: hover) {
   a:hover {
-    font-size: 1.2rem;
-    color: var(--accent-2-color);
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 200;
+    /* color: var(--accent-2-color); */
   }
 }
 
@@ -127,6 +126,6 @@ textarea {
 
 @media only screen and (max-width: 600px) {
   .component-container {
-    margin-top: 1rem
+    margin-top: 1rem;
   }
 }
