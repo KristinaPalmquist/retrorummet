@@ -49,13 +49,13 @@ onMounted(() => {
 <template>
   <div id="home-view">
     <div class="hero" ref="heroRef">
-
       <div class="fade-up"></div>
-      <img
+      <div class="hero-image"></div>
+      <!-- <img
         src="@/assets/img/hero.jpg"
         alt="Welcome to Retro Rummet"
         class="hero-image"
-      />
+      /> -->
       <div class="fade-down"></div>
       <div class="glass-card">
         <div class="hero-text">
@@ -104,25 +104,23 @@ onMounted(() => {
       </div>
     </section>
   </div>
+  <div class="empty-space"></div>
 </template>
 
 <style scoped>
 #home-view {
   background-color: var(--background-color);
-  position: absolute;
-  top: 0;
-}
-.hero {
-  position: relative;
-  top: 0;
-  /* z-index: 0; */
+  display: flex;
+  flex-direction: column;
 }
 
+
 .hero-image {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  object-fit: cover;
-  /* z-index: 1; */
+  background-image: url('@/assets/img/hero.jpg');
+  background-size: cover;
+  background-position: center;
   border: none;
 }
 
@@ -133,10 +131,7 @@ onMounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-
-  /* background: rgba(0, 0, 0, 0.5); */
   background: var(--hero-overlay);
-  /* z-index: 2; */
 }
 
 .fade-up {
@@ -182,21 +177,18 @@ onMounted(() => {
   padding: 2rem;
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
   width: clamp(300px, 50%, 900px);
-  /* height: max-content; */
   text-align: center;
   z-index: 2;
 }
 
 .hero-text {
   color: white;
-  /* border-radius: 1rem; */
   z-index: 1;
 }
 
 .hero-text h1,
 .hero-text p {
   color: white;
-  /* z-index: 1; */
 }
 
 .hero-text h1 {
@@ -205,10 +197,7 @@ onMounted(() => {
 }
 
 .intro-sections {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr; */
-  margin-top: calc(100vh + 4rem);
-  /* margin-top: 2rem; */
+  margin-top: 100vh;
 }
 
 .features ul li {
@@ -216,17 +205,11 @@ onMounted(() => {
   grid-template-columns: 2fr 3fr;
 }
 
-/* .introduction {
-  margin-top: 100vh;
-  
-} */
-
 .features {
   margin-top: 2rem;
 }
 
 .features ul {
-  /* list-style-type: none; */
   padding: 0;
 }
 
@@ -236,17 +219,15 @@ onMounted(() => {
 }
 
 .categories {
-  /* position: relative;  */
   width: 100vw;
-  /* max-width: 100%; */
 }
 
 .categories-wrapper {
-  /* position: absolute;
-  width: 100%; */
+  width: 100%;
   max-width: 100vw;
   overflow: hidden;
 }
+
 
 @media only screen and (max-width: 600px) {
   .glass-card {

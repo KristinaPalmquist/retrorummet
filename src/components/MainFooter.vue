@@ -46,7 +46,7 @@ const currentYear = new Date().getFullYear();
   background-color: var(--footer-background-color);
   width: 100%;
   padding: 2rem;
-  z-index: 10;
+  /* z-index: 10; */
   display: flex;
   flex-direction: column;
 }
