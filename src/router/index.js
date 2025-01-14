@@ -39,27 +39,12 @@ const routes = [
 
     props: true,
   },
-  // {
-  //   path: '/checkout',
-  //   name: 'Checkout',
-  //   component: CheckoutForm,
-  // },
   {
     path: '/contact',
     name: 'Contact',
     component: ContactUs,
   },
-  // {
-  //   path: '/login',
-  //   name: 'Login',
-  //   component: LoginForm,
-  // },
   { path: '/products', name: 'Products', component: ProductsView },
-  // {
-  //   path: '/welcome',
-  //   name: 'Welcome',
-  //   component: WelcomeUser,
-  // },
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
@@ -67,11 +52,19 @@ const routes = [
   },
 ];
 
+// const router = createRouter({
+//   history: createWebHistory(import.meta.env.BASE_URL),
+//   routes,
+//   // routes: routes,
+//   // linkActiveClass: 'active'
+// });
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-  // routes: routes,
-  // linkActiveClass: 'active'
+  scrollBehavior() {
+    return { top: 0 };
+  },
 });
 
 export default router;

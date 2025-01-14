@@ -78,29 +78,64 @@ onMounted(() => {
 
 <template>
   <div id="products-view" class="component-container">
-    <h1>Products</h1>
-    <div class="product-list">
-      <div
-        v-for="product in filteredProducts"
-        :key="product.category + product.id"
-        class="product-item"
-        @click="navigateToProduct(product.name, product.category)"
-      >
-        <ProductCard
-          :product="product"
-          :category-name="product.category.toLowerCase()"
-        />
-      </div>
-      <div v-if="filteredProducts.length === 0" class="empty-search message">
-        No products found for your search
+    <div v-if="filteredProducts.length === 0" class="empty-search">
+      <h2>We couldn't find any results that match your search.</h2>
+      <p>Here are a few things you can try:</p>
+      <ul>
+        <!-- <li>Double-check your spelling.</li> -->
+        <li>Check for any spelling errors.</li>
+        <!-- <li>Please try adjusting your search terms.</li>
+        <li>Use different keywords.</li> -->
+        <li>Try adjusting your search term.</li>
+        <!-- <li>Try a more general search term.</li>
+        <li>Broaden your search terms.</li> -->
+        <li>Test a more general search term.</li>
+      </ul>
+
+    </div>
+    <div v-else>
+      <h1>Products</h1>
+      <div class="product-list">
+        <div
+          v-for="product in filteredProducts"
+          :key="product.category + product.id"
+          class="product-item"
+          @click="navigateToProduct(product.name, product.category)"
+        >
+          <ProductCard
+            :product="product"
+            :category-name="product.category.toLowerCase()"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-#products-view {
+/* #products-view {
   padding: 2rem;
+} */
+
+.empty-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+  min-height: 50vh;
+  /* text-align: center; */
+  /* margin: 4rem 0; */
+}
+.empty-search p {
+  margin: 1rem;
+}
+
+.empty-search ul {
+  width: max-content;
+  margin: 0 auto;
+  /* list-style-type: none; */
+  padding-inline-start: 0;
+  margin: 0;
 }
 
 .product-list {
@@ -159,9 +194,6 @@ onMounted(() => {
   color: #333;
 }
 
-.empty-search {
-  margin-bottom: 2rem;
-}
 
 @media only screen and (min-width: 1200px) {
   .product-list {

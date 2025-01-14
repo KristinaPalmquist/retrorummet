@@ -51,8 +51,8 @@ watch(
 
 #search-bar .input-field:focus {
   background: var(--color-background);
-  border: 1px solid var(--accent-3-color);
-  outline: 1px solid var(--accent-3-color);
+  border: 1px solid var(--link-color);
+  outline: 1px solid var(--link-color);
 }
 
 @media only screen and (max-width: 600px) {

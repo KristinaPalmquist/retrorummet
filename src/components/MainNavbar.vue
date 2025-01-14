@@ -18,9 +18,9 @@ const routes = [
 
 const handleRouting = (event, path) => {
   event.preventDefault();
-  router.push(path);
   isOpen.value = false;
   emit('update:isOpen', isOpen.value);
+  router.push(path);
 };
 
 const toggleMenu = () => {
@@ -200,6 +200,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 4;
 }
 
 .fullscreen-menu {

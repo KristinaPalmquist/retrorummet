@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "name": "Selena",
+    "name": "Tina",
     "category": "sideboard",
     "description": "Warm tone, practical storage.",
-    "images": ["../assets/img/sideboard/selena.jpg"],
+    "images": ["../assets/img/sideboard/tina.jpg"],
     "price": 29.99,
     "specifications": {
       "color": "Brown",
