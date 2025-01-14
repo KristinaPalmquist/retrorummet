@@ -105,7 +105,8 @@
 .introduction .image1 {
   grid-area: image1;
   background-image: url('../assets/img/chair/gote.jpg');
-  width: 30vw;
+  width: 60vw;
+  margin-left: -20vw;
 }
 .introduction .content-about1 {
   grid-area: content-about1;
@@ -160,7 +161,8 @@
 .team .image2 {
   grid-area: image2;
   background-image: url('../assets/img/decor/pexel.jpg');
-  width: 40vw;
+  width: 70vw;
+  margin-right: -20vw;
 }
 
 .values {
@@ -195,7 +197,8 @@
 .values .image3 {
   grid-area: image3;
   background-image: url('../assets/img/sideboard/uno.jpg');
-  width: 40vw;
+  width: 60vw;
+  margin-left: -20vw;
   /* height: 50vh; */
 }
 </style>
