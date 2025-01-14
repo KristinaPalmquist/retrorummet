@@ -49,11 +49,6 @@ watch(
   border-radius: 4px;
 }
 
-#search-bar .input-field:focus {
-  background: var(--color-background);
-  border: 1px solid var(--link-color);
-  outline: 1px solid var(--link-color);
-}
 
 @media only screen and (max-width: 600px) {
   #search-bar .input-field {

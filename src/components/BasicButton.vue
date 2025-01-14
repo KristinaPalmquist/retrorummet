@@ -51,14 +51,12 @@ button {
     var(--button-2-color),
     var(--button-1-color) 99%
   );
-
   background-size: calc(100% + 20px) calc(100% + 20px);
   border-radius: 0.7rem;
-
   border: 0.5px solid var(--vt-c-divider-light-2);
-  /* border: 0.5px solid rgba(72, 77, 73, 0.15); */
   box-sizing: border-box;
   color: #24292e;
+  letter-spacing: 0.3px;
   display: inline-block;
   font-size: 1.2rem;
   font-weight: 500;
@@ -103,12 +101,9 @@ button:-webkit-details-marker {
 }
 
 button.cta-btn {
-  background-color: var(--accent3-color);
-  background-image: linear-gradient(
-    1deg,
-    var(--accent-5-color),
-    var(--accent-6-color) 99%
-  );
+  background-color: var(--link-color);
+  background-image: var(--button-gradient);
+  color: #fff;
 }
 
 button.small-icon {

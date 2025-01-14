@@ -15,13 +15,6 @@ const formContent = ref({
 
 const showSentMessage = ref(false);
 
-const clearForm = () => {
-  name.value = '';
-  email.value = '';
-  subject.value = '';
-  message.value = '';
-};
-
 const handleSubmit = () => {
   formContent.value = {
     name: name.value,
@@ -29,7 +22,12 @@ const handleSubmit = () => {
     subject: subject.value,
     message: message.value,
   };
+  console.log(formContent.value);
   showSentMessage.value = true;
+  clearForm();
+};
+
+const clearForm = () => {
   name.value = '';
   email.value = '';
   subject.value = '';
@@ -44,15 +42,27 @@ const handleSubmit = () => {
       <form @submit.prevent="handleSubmit">
         <div>
           <label for="name">Name</label>
-          <input type="text" id="name" v-model="name" required />
+          <input
+            type="text"
+            id="name"
+            v-model="name"
+            autocomplete="name"
+            required
+          />
         </div>
         <div>
           <label for="email">Email</label>
-          <input type="email" id="email" v-model="email" required />
+          <input
+            type="email"
+            id="email"
+            v-model="email"
+            autocomplete="email"
+            required
+          />
         </div>
         <div>
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" v-model="subject" required />
+          <label for="subject">Subject (optional)</label>
+          <input type="text" id="subject" v-model="subject" />
         </div>
         <div>
           <label for="message">Message</label>
@@ -60,13 +70,13 @@ const handleSubmit = () => {
         </div>
         <div class="btn-div">
           <BasicButton
-            :btnType="button"
-            :btnText="'Clear'"
+            :btnType="'button'"
+            :btnText="'Clear Fields'"
             :btnFunction="clearForm"
           />
           <BasicButton
-            :btnType="submit"
-            :btnText="'Submit'"
+            :btnType="'submit'"
+            :btnText="'Submit Message'"
             :btnClass="'cta-btn'"
             :btnFunction="handleSubmit"
           />

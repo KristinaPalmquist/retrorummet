@@ -12,7 +12,12 @@
   --light-modal-background: rgba(0, 0, 0, 0.05);
   --light-hero-overlay: rgba(0, 0, 0, 0.2);
   --light-link-color: var(--color-7);
-
+  --light-button-gradient: linear-gradient(
+    1deg,
+    var(--color-2),
+    var(--color-7) 99%
+  );
+  --light-input-border: 1px solid #ccc;
 
   --vt-c-black: #181818;
   --vt-c-black-soft: #222222;
@@ -24,6 +29,12 @@
   --dark-modal-background: rgba(255, 255, 255, 0.1);
   --dark-hero-overlay: rgba(0, 0, 0, 0.2);
   --dark-link-color: var(--color-11);
+  --dark-button-gradient: linear-gradient(
+    1deg,
+    var(--color-4),
+    var(--color-11) 99%
+  );
+  --dark-input-border: 1px solid #555;
 
   --vt-c-indigo: #2c3e50;
 
@@ -54,17 +65,6 @@
   --color-12: #bcb2b5;
   --color-13: #d9c4ba;
   --color-14: #eb8f5b;
-
-  --accent-1-color: #1bc570;
-  --accent-2-color: #1eac65;
-  --accent-3-color: #33eb39;
-  --accent-4-color: #f9b8b8;
-  --accent-5-color: #7ecc10;
-  --accent-6-color: #dcf7ba;
-  --accent-7-color: #ff69b4;
-
-  --accent-1-background-color: rgba(27, 197, 112, 0.9);
-  --accent-4-background-color: rgba(249, 184, 184, 0.9);
 
   --button-1-color: #fafbfc;
   --button-2-color: #c4c4c4;
@@ -108,17 +108,6 @@
 }
 
 [data-theme='light'] {
-  accent-color: var(--accent-color);
-  --accent-1-color: #1bc570;
-  --accent-2-color: #1eac65;
-  --accent-3-color: #33eb39;
-  --accent-4-color: #f9b8b8;
-  --accent-5-color: #7ecc10;
-  --accent-6-color: #dcf7ba;
-
-  --accent1-background-color: rgba(27, 197, 112, 0.9);
-  --accent-4-background-color: rgba(249, 184, 184, 0.9);
-
   --button-1-color: #fafbfc;
   --button-2-color: #c4c4c4;
 
@@ -136,6 +125,8 @@
   --hero-overlay: var(--light-hero-overlay);
   --text-color: #000;
   --link-color: var(--light-link-color);
+  --button-gradient: var(--light-button-gradient);
+  --input-border: var(--light-input-border);
 
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
@@ -163,6 +154,8 @@
   --hero-overlay: var(--dark-hero-overlay);
   --text-color: #fff;
   --link-color: var(--dark-link-color);
+  --button-gradient: var(--dark-button-gradient);
+  --input-border: var(--dark-input-border);
 
   --color-background: var(--vt-c-black);
   --color-background-soft: var(--vt-c-black-soft);

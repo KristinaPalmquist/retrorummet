@@ -211,8 +211,6 @@ onUnmounted(() => {
   right: 2rem;
   width: calc(100vw - 4rem);
   height: calc(100vh - 3rem);
-  /* background-color: var(--accent-4-background-color); */
-  /* background-color: var(--footer-background-color); */
   background-color: var(--modal-overlay);
   color: var(--text-color);
   border-radius: 1rem;
