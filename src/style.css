@@ -10,24 +10,14 @@
 }
 
 h1 {
-  font-family: Helvetica, "Helvetica Neue", arial, sans-serif;
-font-size: 35px;
-font-style: normal;
-font-weight: 400;
-letter-spacing: 0px;
-line-height: 42px;
-text-transform: none;
-color: var(--text-color);
-  /* font-family: 'Monoton', sans-serif; */
-  /* font-weight: 800; */
-  /* font-style: normal; */
-
-  /* color: var(--color-text); */
-
-/* 
-  letter-spacing: 0.05rem;
-  text-align: center;
-  margin: 0.7rem 0; */
+  font-family: Helvetica, 'Helvetica Neue', arial, sans-serif;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 42px;
+  color: var(--text-color);
+  text-transform: uppercase;
 }
 
 h2,

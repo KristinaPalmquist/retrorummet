@@ -36,7 +36,8 @@ const clearForm = () => {
 </script>
 
 <template>
-  <div id="contact-us" class="component-container">
+  <div id="contact-us" >
+    <div class="component-container">
     <h1>Contact Us</h1>
     <div class="contact-form" v-if="!showSentMessage">
       <form @submit.prevent="handleSubmit">
@@ -101,19 +102,29 @@ const clearForm = () => {
           <p>We will get back to you shortly.</p>
         </div>
       </div>
-    </div>
+    </div></div>
   </div>
 </template>
 
 <style scoped>
 #contact-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact-us h1 {
+ text-align: center;
+ margin-top: 2rem;
+}
+/* #contact-us {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: calc(100vh - 3rem);
-}
+} */
 
 .contact-form {
-  height: 80vh;
+  /* height: 70vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -187,6 +198,13 @@ const clearForm = () => {
 
   .contact-messages > div {
     gap: 5rem;
+  }
+  .btn-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    height: max-content
   }
 }
 </style>

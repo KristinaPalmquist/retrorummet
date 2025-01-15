@@ -94,7 +94,9 @@ watch(headerHeight, (newHeight) => {
         ref="titleRef"
         class="header-title"
       >
-        <h1 v-if="!isOpen" class="company-name">{{ companyName }}</h1></a
+        <h1 v-if="!isOpen" class="company-name">
+          {{ companyName }}
+        </h1></a
       >
       <div class="nav-btns">
         <div class="search">
@@ -267,6 +269,5 @@ a {
   .nav {
     grid-area: nav;
   }
-
 }
 </style>

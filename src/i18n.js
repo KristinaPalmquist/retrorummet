@@ -3,18 +3,22 @@ import { createI18n } from 'vue-i18n';
 const messages = {
   sv: {
     companyName: 'RetroRummet',
+    phone: '0123 456 789',
     // Routes
     routes: {
       home: 'Hem',
-      about: 'Om',
+      about: 'Om oss',
       contact: 'Kontakt',
       categories: 'Kategorier',
       products: 'Produkter',
     },
     // Views
     home: {
-      header: 'Välkommen till {companyName}! ',
-      hero: 'Upptäck en skattkammare av vintage- och second-hand-möbler. Vi är glada att ha dig här.',
+      header: 'Välkommen till {companyName}',
+      hero: {
+        text1: 'Upptäck en skattkammare av vintage- och second-hand-möbler.',
+        text2: 'Vi är glada att ha dig här!',
+      },
       introduction: {
         header: 'Om oss',
         text: 'På {companyName} brinner vi för en hållbart livsstil. Vår kurerade samling av vintage möbler erbjuder unika stilar och tidlösa pjäser som du inte hittar någon annanstans.',
@@ -40,13 +44,34 @@ const messages = {
         header: 'Välj bland våra kategorier',
       },
     },
+    footer: {
+      bottom: '© {currentYear} {companyName}. Alla rättigheter förbehållna.',
+      about: {
+        header: 'Om oss',
+        text: 'Vi är ett företag dedikerat till att tillhandahålla de bästa produkterna och tjänsterna till våra kunder.',
+      },
+      links: {
+        header: 'Snabblänkar',
+        
+      },
+      contact: {
+        header: 'Kontakta oss',
+        text1: 'E-post',
+        text2: 'Telefon',
+      },
+      social: {
+        header: 'Följ oss',
+      },
+    },
     // Components
     search: {
       placeholder: 'Sök produkter',
     },
   },
   en: {
+    // Facts
     companyName: 'RetroRoom',
+    phone: '+46 123 456 789',
     // Routes
     routes: {
       home: 'Home',
@@ -57,8 +82,12 @@ const messages = {
     },
     // Views
     home: {
-      header: 'Welcome to {companyName}!',
-      hero: 'Discover a treasure trove of vintage and second-hand furniture. We are delighted to have you here.',
+      header: 'Welcome to {companyName}',
+      hero: {
+        text1:
+          'Discover a treasure trove of vintage and second-hand furniture.',
+        text2: 'We are delighted to have you here!',
+      },
       introduction: {
         header: 'About us',
         text: "At {companyName }, we are passionate about sustainable living.Our curated collection of pre-loved furniture offers unique styles and timeless pieces that you won't find anywhere else.",
@@ -83,6 +112,25 @@ const messages = {
       categories: {
         header: 'Browse our categories',
       },
+    },
+    footer: {
+      about: {
+        header: 'About us',
+        text: 'We are a company dedicated to providing the best products and services to our customers.',
+      },
+      links: {
+        header: 'Quick Links',
+        
+      },
+      contact: {
+        header: 'Contact us',
+        text1: 'Email',
+        text2: 'Phone',
+      },
+      social: {
+        header: 'Follow us',
+      },
+      bottom: '© {currentYear} {companyName}. All rights reserved.',
     },
     // Components
     search: {

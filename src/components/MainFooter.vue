@@ -1,33 +1,49 @@
 <script setup>
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+
 const currentYear = new Date().getFullYear();
+
+const { t } = useI18n();
+const companyName = ref(t('companyName'));
 </script>
 
 <template>
   <footer id="main-footer">
     <div class="footer-content">
       <div class="footer-section about">
-        <h2>About Us</h2>
+        <h2>{{ t('footer.about.header') }}</h2>
         <p>
-          We are a company dedicated to providing the best products and services
-          to our customers.
+          {{ t('footer.about.text') }}
         </p>
       </div>
       <div class="footer-section links">
-        <h2>Quick Links</h2>
+        <h2>{{ t('footer.links.header') }}</h2>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/products">Products</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li>
+            <a href="/">{{ t('routes.home') }}</a>
+          </li>
+          <li>
+            <a href="/about">{{ t('routes.about') }}</a>
+          </li>
+          <li>
+            <a href="/products">{{ t('routes.products') }}</a>
+          </li>
+          <li>
+            <a href="/categories">{{ t('routes.categories') }}</a>
+          </li>
+          <li>
+            <a href="/contact">{{ t('routes.contact') }}</a>
+          </li>
         </ul>
       </div>
       <div class="footer-section contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@example.com</p>
-        <p>Phone: +123 456 7890</p>
+        <h2>{{ t('footer.contact.header') }}</h2>
+        <p>{{ t('footer.contact.text1') }}: info@example.com</p>
+        <p>{{ t('footer.contact.text2') }}: {{ t('phone') }}</p>
       </div>
       <div class="footer-section social">
-        <h2>Follow Us</h2>
+        <h2>{{ t('footer.social.header') }}</h2>
         <ul>
           <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
           <li><a href="https://x.com" target="_blank">Twitter</a></li>
@@ -36,7 +52,7 @@ const currentYear = new Date().getFullYear();
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; Kristina Palmquist, {{ currentYear }}</p>
+      <p>{{ t('footer.bottom', { currentYear, companyName }) }}</p>
     </div>
   </footer>
 </template>

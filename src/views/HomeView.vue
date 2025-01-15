@@ -57,7 +57,10 @@ onMounted(() => {
         <div class="hero-text">
           <h1>{{ t('home.header', { companyName }) }}</h1>
           <p>
-            {{ t('home.hero') }}
+            {{ t('home.hero.text1') }}
+          </p>
+          <p>
+            {{ t('home.hero.text2') }}
           </p>
         </div>
       </div>
@@ -71,16 +74,19 @@ onMounted(() => {
           </p>
         </section>
         <section class="features">
-          <h2>{{  t('home.features.header') }}</h2>
+          <h2>{{ t('home.features.header') }}</h2>
           <ul>
             <li>
-              <strong>{{  t('home.features.items[0].title') }}</strong>{{  t('home.features.items[0].text') }}
+              <strong>{{ t('home.features.items[0].title') }}</strong
+              >{{ t('home.features.items[0].text') }}
             </li>
             <li>
-              <strong>{{  t('home.features.items[1].title') }}</strong>{{  t('home.features.items[1].text') }}
+              <strong>{{ t('home.features.items[1].title') }}</strong
+              >{{ t('home.features.items[1].text') }}
             </li>
             <li>
-              <strong>{{  t('home.features.items[2].title') }}</strong>{{  t('home.features.items[2].text') }}
+              <strong>{{ t('home.features.items[2].title') }}</strong
+              >{{ t('home.features.items[2].text') }}
             </li>
           </ul>
         </section>
@@ -88,7 +94,7 @@ onMounted(() => {
     </div>
     <section class="categories">
       <div class="categories-wrapper" ref="categoriesRef">
-        <h2>{{  t('home.categories.header') }}</h2>
+        <h2>{{ t('home.categories.header') }}</h2>
         <CategoriesSmall />
       </div>
     </section>
@@ -170,19 +176,21 @@ onMounted(() => {
   z-index: 2;
 }
 
-.hero-text {
-  color: white;
-  z-index: 1;
-}
-
+.hero-text,
 .hero-text h1,
 .hero-text p {
   color: white;
 }
 
 .hero-text h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  line-height: 4.5rem;
   margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: rem;
+  line-height: 2rem;
 }
 
 .intro-sections {
