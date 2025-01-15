@@ -1,18 +1,33 @@
 <script setup>
-import { computed, ref, onMounted, onUnmounted } from 'vue';
+import { computed, ref, onMounted, onUnmounted, watch } from 'vue';
 import { useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 
+const { t, locale } = useI18n();
 const emit = defineEmits(['update:isOpen']);
 const isOpen = ref(false);
 const windowHeight = ref(window.innerHeight);
 const windowWidth = ref(window.innerWidth);
 const routes = ref([
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Contact', path: '/contact' },
-  { name: 'Categories', path: '/categories' },
-  { name: 'Products', path: '/products' },
+  { name: t('routes.home'), path: '/' },
+  { name: t('routes.about'), path: '/about' },
+  { name: t('routes.contact'), path: '/contact' },
+  { name: t('routes.categories'), path: '/categories' },
+  { name: t('routes.products'), path: '/products' },
 ]);
+
+const updateRoutes = () => {
+  routes.value = [
+    { name: t('routes.home'), path: '/' },
+    { name: t('routes.about'), path: '/about' },
+    { name: t('routes.contact'), path: '/contact' },
+    { name: t('routes.categories'), path: '/categories' },
+    { name: t('routes.products'), path: '/products' },
+  ];
+};
+
+watch(locale, updateRoutes);
+
 const router = useRouter();
 
 const toggleMenu = () => {
@@ -59,17 +74,6 @@ const navbarItemStyle = computed(() => {
     padding: `${padding}px 0`,
   };
 });
-
-// const navbarItemStyle = computed(() => {
-//   const containerSize = Math.min(windowHeight.value, windowWidth.value) * 0.9;
-//   const itemSize = containerSize / routes.value.length;
-//   const fontSize = itemSize * 0.5;
-//   const padding = itemSize * 0.1;
-//   return {
-//     fontSize: `${fontSize}px`,
-//     padding: `${padding}px`,
-//   };
-// });
 
 onMounted(() => {
   window.addEventListener('resize', updateWindowSize);

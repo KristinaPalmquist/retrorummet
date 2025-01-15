@@ -2,10 +2,13 @@
 import { ref, watch } from 'vue';
 import { useDebounce } from '@vueuse/core';
 import { useStore } from '@/store';
+import { useI18n } from 'vue-i18n';
+
 
 const store = useStore();
 const localSearchQuery = ref(store.getSearchQuery);
 const debouncedSearchQuery = useDebounce(localSearchQuery, 300);
+const { t} = useI18n();
 
 watch(debouncedSearchQuery, (newQuery) => {
   store.setSearchQuery(newQuery);
@@ -26,7 +29,7 @@ watch(
       type="text"
       name="search"
       v-model="localSearchQuery"
-      placeholder="Search products..."
+      :placeholder= "t('search.placeholder')"
     />
   </div>
 </template>
@@ -53,14 +56,8 @@ watch(
 @media only screen and (max-width: 600px) {
   #search-bar .input-field {
     background: var(--color-background);
-    /* width: 200px; */
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
   }
 }
 
-@media only screen and (max-width: 400px) {
-  #search-bar .input-field {
-    width: 175px;
-  }
-}
 </style>

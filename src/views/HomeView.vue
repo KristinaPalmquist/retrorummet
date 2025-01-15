@@ -42,29 +42,6 @@ onMounted(() => {
     return () => {
       window.removeEventListener('resize', updateCategoriesWidth);
     };
-
-    // const categoriesElement = categoriesRef.value;
-    // if (categoriesElement) {
-    //   const updateCategoriesWidth = () => {
-    //     const viewportWidth = window.innerWidth;
-    //     if (viewportWidth > 600) {
-    //       const offsetLeft = categoriesElement.getBoundingClientRect().left;
-    //       categoriesElement.style.position = 'relative';
-    //       categoriesElement.style.left = `-${offsetLeft}px`;
-    //       categoriesElement.style.width = `${viewportWidth}px`;
-    //     } else {
-    //       categoriesElement.style.position = 'relative';
-    //       categoriesElement.style.left = '0';
-    //       categoriesElement.style.width = '100%';
-    //     }
-    //   };
-
-    //   updateCategoriesWidth();
-    //   window.addEventListener('resize', updateCategoriesWidth);
-
-    //   return () => {
-    //     window.removeEventListener('resize', updateCategoriesWidth);
-    //   };
   }
 });
 </script>
@@ -88,28 +65,22 @@ onMounted(() => {
     <div class="component-container">
       <div class="intro-sections">
         <section class="introduction">
-          <h2>About Us</h2>
+          <h2>{{ t('home.introduction.header') }}</h2>
           <p>
-            At {{ companyName }}, we are passionate about sustainable living.
-            Our curated collection of pre-loved furniture offers unique styles
-            and timeless pieces that you won't find anywhere else.
+            {{ t('home.introduction.text', { companyName }) }}
           </p>
         </section>
         <section class="features">
-          <h2>Our Features</h2>
+          <h2>{{  t('home.features.header') }}</h2>
           <ul>
             <li>
-              <strong>Curated Selection:</strong> Each item is carefully
-              selected to ensure quality and style.
+              <strong>{{  t('home.features.items[0].title') }}</strong>{{  t('home.features.items[0].text') }}
             </li>
             <li>
-              <strong>Sustainable Living:</strong> By choosing second-hand,
-              you're making a positive impact on the environment.
+              <strong>{{  t('home.features.items[1].title') }}</strong>{{  t('home.features.items[1].text') }}
             </li>
             <li>
-              <strong>Exceptional Customer Service:</strong> Our team is here to
-              help you find the perfect piece and answer any questions you may
-              have.
+              <strong>{{  t('home.features.items[2].title') }}</strong>{{  t('home.features.items[2].text') }}
             </li>
           </ul>
         </section>
@@ -117,7 +88,7 @@ onMounted(() => {
     </div>
     <section class="categories">
       <div class="categories-wrapper" ref="categoriesRef">
-        <h2>Browse our categories</h2>
+        <h2>{{  t('home.categories.header') }}</h2>
         <CategoriesSmall />
       </div>
     </section>
@@ -258,14 +229,5 @@ onMounted(() => {
   .hero-text p {
     font-size: 1rem;
   }
-  /* .categories {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} 
- .categories-wrapper {
-    left: 1rem;
-    max-width: calc(100vw - 2rem);
-  } */
 }
 </style>

@@ -236,6 +236,9 @@ a {
 }
 
 @media only screen and (max-width: 420px) {
+  .header-content {
+    width: 100%;
+  }
   .company-name {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
@@ -244,6 +247,9 @@ a {
   .nav-btns {
     display: grid;
     grid-template-areas: 'search search search search search' '. language theme nav .';
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 
   .search {
