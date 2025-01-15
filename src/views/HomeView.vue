@@ -1,7 +1,16 @@
 <script setup>
 import CategoriesSmall from '@/components/CategoriesSmall.vue';
 import { ref, onMounted } from 'vue';
-const companyName = ref('Retro Rummet');
+import { useI18n } from 'vue-i18n';
+
+const props = defineProps({
+  searchQuery: String,
+});
+
+const emits = defineEmits(['productClicked']);
+
+const { t } = useI18n();
+const companyName = ref(t('companyName'));
 const heroRef = ref(null);
 const categoriesRef = ref(null);
 
@@ -20,28 +29,42 @@ onMounted(() => {
     const updateCategoriesWidth = () => {
       const viewportWidth = window.innerWidth;
       if (viewportWidth > 600) {
-        const offsetLeft = categoriesElement.getBoundingClientRect().left;
-        categoriesElement.style.position = 'relative';
-        categoriesElement.style.left = `-${offsetLeft}px`;
-        categoriesElement.style.width = `${viewportWidth}px`;
+        const offsetLeft = categoriesElement.offsetLeft;
+        categoriesElement.style.width = `${viewportWidth - offsetLeft}px`;
       } else {
-        categoriesElement.style.position = 'relative';
-        categoriesElement.style.left = '0';
         categoriesElement.style.width = '100%';
       }
-      // const viewportWidth = window.innerWidth;
-      // const offsetLeft = categoriesElement.getBoundingClientRect().left;
-      // categoriesElement.style.position = 'relative';
-      // categoriesElement.style.left = `-${offsetLeft}px`;
-      // categoriesElement.style.width = `${viewportWidth}px`;
     };
 
-    updateCategoriesWidth();
     window.addEventListener('resize', updateCategoriesWidth);
+    updateCategoriesWidth();
 
     return () => {
       window.removeEventListener('resize', updateCategoriesWidth);
     };
+
+    // const categoriesElement = categoriesRef.value;
+    // if (categoriesElement) {
+    //   const updateCategoriesWidth = () => {
+    //     const viewportWidth = window.innerWidth;
+    //     if (viewportWidth > 600) {
+    //       const offsetLeft = categoriesElement.getBoundingClientRect().left;
+    //       categoriesElement.style.position = 'relative';
+    //       categoriesElement.style.left = `-${offsetLeft}px`;
+    //       categoriesElement.style.width = `${viewportWidth}px`;
+    //     } else {
+    //       categoriesElement.style.position = 'relative';
+    //       categoriesElement.style.left = '0';
+    //       categoriesElement.style.width = '100%';
+    //     }
+    //   };
+
+    //   updateCategoriesWidth();
+    //   window.addEventListener('resize', updateCategoriesWidth);
+
+    //   return () => {
+    //     window.removeEventListener('resize', updateCategoriesWidth);
+    //   };
   }
 });
 </script>
@@ -51,18 +74,13 @@ onMounted(() => {
     <div class="hero" ref="heroRef">
       <div class="fade-up"></div>
       <div class="hero-image"></div>
-      <!-- <img
-        src="@/assets/img/hero.jpg"
-        alt="Welcome to Retro Rummet"
-        class="hero-image"
-      /> -->
+
       <div class="fade-down"></div>
       <div class="glass-card">
         <div class="hero-text">
-          <h1>Welcome to {{ companyName }}</h1>
+          <h1>{{ t('home.header', { companyName }) }}</h1>
           <p>
-            Discover a treasure trove of vintage and second-hand furniture. We
-            are delighted to have you here.
+            {{ t('home.hero') }}
           </p>
         </div>
       </div>
@@ -112,8 +130,8 @@ onMounted(() => {
   background-color: var(--background-color);
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-
 
 .hero-image {
   width: 100%;
@@ -227,7 +245,6 @@ onMounted(() => {
   max-width: 100vw;
   overflow: hidden;
 }
-
 
 @media only screen and (max-width: 600px) {
   .glass-card {

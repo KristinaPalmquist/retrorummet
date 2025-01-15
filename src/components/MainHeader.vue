@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted, onUpdated, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useStore } from '@/store';
 import MainNavbar from '@/components/MainNavbar.vue';
+import LanguageToggle from '@/components/LanguageToggle.vue';
 import ThemeToggle from './ThemeToggle.vue';
 import SearchBar from './SearchBar.vue';
 
@@ -98,6 +99,9 @@ watch(headerHeight, (newHeight) => {
       <div class="nav-btns">
         <div class="search">
           <SearchBar v-if="!isOpen" />
+        </div>
+        <div class="language">
+          <LanguageToggle v-if="!isOpen" />
         </div>
         <div class="theme">
           <ThemeToggle v-if="!isOpen" />
@@ -237,8 +241,26 @@ a {
     margin-bottom: 0.5rem;
   }
 
-  .nav-btns .theme {
-    display: none;
+  .nav-btns {
+    display: grid;
+    grid-template-areas: 'search search search search search' '. language theme nav .';
   }
+
+  .search {
+    grid-area: search;
+  }
+
+  .language {
+    grid-area: language;
+  }
+
+  .theme {
+    grid-area: theme;
+  }
+
+  .nav {
+    grid-area: nav;
+  }
+
 }
 </style>
