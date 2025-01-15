@@ -2,9 +2,9 @@
   {
     "id": 1,
     "name": "Tina",
-    "category": "sideboard",
+    "category": "storage",
     "description": "Warm tone, practical storage.",
-    "images": ["../assets/img/sideboard/tina.jpg"],
+    "images": ["../assets/img/storage/tina.jpg"],
     "price": 29.99,
     "specifications": {
       "color": "Brown",
@@ -37,9 +37,9 @@
   {
     "id": 2,
     "name": "Uno",
-    "category": "sideboard",
+    "category": "storage",
     "description": "Stylish and simple sideboard.",
-    "images": ["../assets/img/sideboard/uno.jpg"],
+    "images": ["../assets/img/storage/uno.jpg"],
     "price": 39.99,
     "specifications": {
       "color": "Brown",
@@ -67,9 +67,9 @@
   {
     "id": 3,
     "name": "Vera",
-    "category": "sideboard",
+    "category": "storage",
     "description": "Danish sideboard.",
-    "images": ["../assets/img/sideboard/vera.jpg"],
+    "images": ["../assets/img/storage/vera.jpg"],
     "price": 49.99,
     "specifications": {
       "color": "Brown",
@@ -92,9 +92,9 @@
   {
     "id": 4,
     "name": "Wolfgang",
-    "category": "sideboard",
+    "category": "storage",
     "description": "Light wood sideboard with a modern touch. Will look great in any room.",
-    "images": ["../assets/img/sideboard/wolfgang.jpg"],
+    "images": ["../assets/img/storage/wolfgang.jpg"],
     "price": 199.99,
     "specifications": {
       "color": "Brown",

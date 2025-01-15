@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps } from 'vue';
+import { computed, defineProps } from 'vue';
 
 const props = defineProps({
   title: {
@@ -14,20 +14,24 @@ const props = defineProps({
 
 const { title, imageSrc } = props;
 
+const displayTitle = computed(() => {
+  const titleWithSpaces = props.title.replace(/-/g, ' ');
+  return titleWithSpaces.charAt(0).toUpperCase() + titleWithSpaces.slice(1);
+});
 </script>
 
 <template>
   <div id="basic-card">
     <img :src="imageSrc" :alt="title" />
     <div class="card-content">
-      <h2>{{ title }}</h2>
+      <h2>{{ displayTitle }}</h2>
     </div>
   </div>
 </template>
 
 <style scoped>
 #basic-card {
- width: 200px;
+  width: 200px;
   border-radius: 1rem;
   break-inside: avoid;
   text-align: center;
