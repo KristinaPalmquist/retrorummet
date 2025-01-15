@@ -1,76 +1,85 @@
 <script setup></script>
 
 <template>
-  <div id="about-us" class="component-container">
-    <h1 class="header-about">About Us</h1>
-    <section class="introduction">
-      <!-- <div class="content-about"> -->
-      <p class="content-about1">
-        Welcome to RetroRummet, your go-to destination for preowned furniture
-        and decorations. Our mission is to promote sustainable living by
-        offering a curated selection of unique and timeless pieces.
-      </p>
-      <div class="empty-about1"></div>
-      <p class="content-about2">
-        Over the years, we have expanded our collection and services, reaching
-        eco-conscious customers worldwide. We operate exclusively online, with
-        no physical showroom, ensuring that our operations are as eco-friendly
-        as possible.
-      </p>
-      <div class="empty-about2"></div>
-      <p class="content-about3">
-        Here's how our site works: Browse through our collection and find an
-        item that you like. Each item page has a form that you can use to
-        contact us with any questions or comments. This form helps us know which
-        item your question or comment is linked to, ensuring a smooth and
-        efficient communication process.
-      </p>
-      <div class="empty-about3"></div>
-      <!-- </div> -->
+  <div id="about-us">
+    <div class="component-container">
+      <h1 class="header-about">About Us</h1>
+      <section class="introduction">
+        <!-- <div class="content-about"> -->
+        <p class="content-about1">
+          Welcome to RetroRummet, your go-to destination for preowned furniture
+          and decorations. Our mission is to promote sustainable living by
+          offering a curated selection of unique and timeless pieces.
+        </p>
+        <div class="empty-about1"></div>
+        <p class="content-about2">
+          Over the years, we have expanded our collection and services, reaching
+          eco-conscious customers worldwide. We operate exclusively online, with
+          no physical showroom, ensuring that our operations are as eco-friendly
+          as possible.
+        </p>
+        <div class="empty-about2"></div>
+        <p class="content-about3">
+          Here's how our site works: Browse through our collection and find an
+          item that you like. Each item page has a form that you can use to
+          contact us with any questions or comments. This form helps us know
+          which item your question or comment is linked to, ensuring a smooth
+          and efficient communication process.
+        </p>
+        <div class="empty-about3"></div>
+        <!-- </div> -->
 
-      <div class="image image1"></div>
-    </section>
+        <div class="image image1"></div>
+      </section>
 
-    <section class="team">
-      <h2 class="header-team">Our Team</h2>
-      <div class="empty-team1"></div>
-      <p class="content-team">
-        Our team is composed of dedicated professionals who are passionate about
-        sustainable living. From our customer service representatives to our
-        product curators, everyone plays a crucial role in our mission to make
-        home decor more sustainable.
-      </p>
-      <div class="empty-team2"></div>
-      <div class="image image2"></div>
-    </section>
-    <section class="values">
-      <h2 class="header-values">Our Values</h2>
-      <div class="content-values">
-        <div>
-          <h2>Customer Satisfaction</h2>
-          We prioritize our customers' needs and strive to exceed their
-          expectations with every purchase.
+      <section class="team">
+        <h2 class="header-team">Our Team</h2>
+        <div class="empty-team1"></div>
+        <p class="content-team">
+          Our team is composed of dedicated professionals who are passionate
+          about sustainable living. From our customer service representatives to
+          our product curators, everyone plays a crucial role in our mission to
+          make home decor more sustainable.
+        </p>
+        <div class="empty-team2"></div>
+        <div class="image image2"></div>
+      </section>
+      <section class="values">
+        <h2 class="header-values">Our Values</h2>
+        <div class="content-values">
+          <div>
+            <h2>Customer Satisfaction</h2>
+            We prioritize our customers' needs and strive to exceed their
+            expectations with every purchase.
+          </div>
+          <div>
+            <h2>Sustainability</h2>
+            We are committed to reducing waste by promoting the reuse and
+            recycling of furniture and decorations.
+          </div>
+
+          <div>
+            <h2>Integrity</h2>
+            We conduct our business with honesty and transparency, building
+            trust with our customers and partners.
+          </div>
+          <div class="empty-values"></div>
         </div>
-        <div>
-          <h2>Sustainability</h2>
-          We are committed to reducing waste by promoting the reuse and
-          recycling of furniture and decorations.
-        </div>
 
-        <div>
-          <h2>Integrity</h2>
-          We conduct our business with honesty and transparency, building trust
-          with our customers and partners.
-        </div>
-        <div class="empty-values"></div>
-      </div>
-
-      <div class="image image3"></div>
-    </section>
+        <div class="image image3"></div>
+      </section>
+    </div>
   </div>
 </template>
 
 <style scoped>
+ #about-us {
+
+  width: 100%;
+  overflow: hidden;
+ margin: 0;
+  padding: 0; 
+}
 .header-about {
   margin-bottom: 2rem;
 }
@@ -82,6 +91,7 @@
 .team,
 .values {
   padding: 5rem 0;
+  /* */
 }
 
 .image {
@@ -89,6 +99,7 @@
   background-position: center;
   background-attachment: fixed;
   border-radius: 2rem;
+  /* overflow-x: hidden; */
 }
 
 .introduction {
@@ -184,10 +195,6 @@
   flex-direction: column;
   gap: 2rem;
 }
-/* .values .content-values h2 {
-  margin: 0;
-  padding-bottom: 0;
-} */
 
 .values .empty-values {
   grid-area: empty-values;

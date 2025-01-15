@@ -145,12 +145,7 @@ a {
 
 .header-title {
   transition: transform 0.5s ease-in-out;
-  /* color: var(--color-text); */
 }
-
-/* a:hover {
-  background-color: transparent;
-} */
 
 .nav-btns {
   display: flex;
@@ -167,6 +162,9 @@ a {
     backdrop-filter: blur(10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
     border: none;
+    height: auto;
+    padding: 1rem;
+    margin: 0;
   }
   #main-header.scrolled {
     background: rgba(255, 255, 255, 0.05);
@@ -185,15 +183,7 @@ a {
   }
   .company-name {
     font-size: 2.5rem;
-    /* padding-bottom: 0.5rem; */
-    /* color: rgb(51, 235, 57);
-    text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.9); */
-    /* text-shadow: 0px 0px 16px rgb(51, 235, 57); */
-    /* text-shadow: 0px 0px 12px rgba(51, 235, 57, 0.9); */
   }
-  /* .login {
-    display: none;
-  } */
 }
 
 @media only screen and (max-width: 780px) {
@@ -205,7 +195,6 @@ a {
 @media only screen and (max-width: 600px) {
   #main-header {
     height: auto;
-    padding: 1rem;
     margin-bottom: 0.5rem;
   }
 
@@ -223,11 +212,8 @@ a {
 
   .nav-btns {
     width: 100%;
-    /* display: grid;
-    grid-template-columns: 2fr 1fr 1fr; */
     justify-content: space-evenly;
     gap: 1rem;
-    /* flex-wrap: wrap; */
     padding-top: 0.5rem;
   }
 
@@ -250,8 +236,6 @@ a {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
   }
-
-  
 
   .nav-btns .theme {
     display: none;
