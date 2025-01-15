@@ -128,17 +128,10 @@ onUnmounted(() => {
 
 <style scoped>
 #main-navbar {
-  position: relative;
   padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .menu-button {
-  position: relative;
-  top: 0rem;
-  right: 0rem;
   z-index: 101;
   display: flex;
   flex-direction: column;
@@ -150,7 +143,6 @@ onUnmounted(() => {
   border: none;
   padding: 0;
   z-index: 1000;
-
   transition: all 0.3s linear;
 }
 
@@ -193,40 +185,31 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100vw;
-  height: 100vh;
   background-color: var(--modal-background);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 4;
 }
 
 .fullscreen-menu {
   position: fixed;
-  top: 1rem;
-  left: 2rem;
-  bottom: 2rem;
-  right: 2rem;
-  width: calc(100vw - 4rem);
-  height: calc(100vh - 3rem);
+  top: 2vh;
+  left: 5vw;
+  right: 5vw;
+  bottom: 2vh;
+  width: 90vw;
+  height: 96vh;
   background-color: var(--modal-overlay);
   color: var(--text-color);
-  border-radius: 1rem;
+  border-radius: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 5;
 }
 
 .fullscreen-menu nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  /* width: max-content; */
-  /* width: calc(min-content + 20vw); */
-  text-align: left;
 }
 
 .fullscreen-menu nav ul li {
@@ -249,8 +232,6 @@ nav ul li a .navbar-numbers {
 
 nav ul li a:hover {
   background-color: transparent;
-  /* font-family: 'Monoton', sans-serif; */
-  /* font-style: italic; */
   font-weight: 400;
   font-style: normal;
   font-size: 5rem;
@@ -267,25 +248,10 @@ nav ul li a:hover {
   color: var(--link-color);
 }
 
-/* .navbar-item:hover {
-  font-style: italic;
-
-} */
-
-@media only screen and (max-width: 1024px) {
-  .navbar-background {
-    left: -3rem;
-  }
-}
 
 @media only screen and (max-width: 600px) {
   #main-navbar {
     padding: 0;
-  }
-
-  .navbar-background {
-    width: 90vw;
-    left: 1.5rem;
   }
 
   .menu-button {
