@@ -44,7 +44,7 @@ const currentYear = new Date().getFullYear();
 <style scoped>
 #main-footer {
   background-color: var(--footer-background-color);
-  width: 100%;
+  width: 100vw;
   padding: 2rem;
   /* z-index: 10; */
   display: flex;
@@ -88,10 +88,11 @@ const currentYear = new Date().getFullYear();
   width: 100%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   #main-footer .footer-content {
     width: 100%;
     flex-direction: column;
+    text-align: center;
   }
   .footer-section {
     margin-bottom: 1rem;
@@ -99,7 +100,7 @@ const currentYear = new Date().getFullYear();
   .footer-section ul li {
     margin-left: 0;
   }
-/* 
+  /* 
   .footer-section.about,
   .footer-section.links {
     display: none;

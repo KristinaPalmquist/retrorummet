@@ -3,18 +3,22 @@ import { computed, ref, onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 
 const emit = defineEmits(['update:isOpen']);
-const router = useRouter();
 const isOpen = ref(false);
 const windowHeight = ref(window.innerHeight);
 const windowWidth = ref(window.innerWidth);
-
-const routes = [
+const routes = ref([
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
   { name: 'Contact', path: '/contact' },
   { name: 'Categories', path: '/categories' },
   { name: 'Products', path: '/products' },
-];
+]);
+const router = useRouter();
+
+const toggleMenu = () => {
+  isOpen.value = !isOpen.value;
+  emit('update:isOpen', isOpen.value);
+};
 
 const handleRouting = (event, path) => {
   event.preventDefault();
@@ -23,66 +27,49 @@ const handleRouting = (event, path) => {
   router.push(path);
 };
 
-const toggleMenu = () => {
-  isOpen.value = !isOpen.value;
-  emit('update:isOpen', isOpen.value);
-};
-
 const updateWindowSize = () => {
   windowHeight.value = window.innerHeight;
   windowWidth.value = window.innerWidth;
 };
 
-// const updateWindowHeight = () => {
-//   windowHeight.value = window.innerHeight;
-// };
-
 const navbarItemStyle = computed(() => {
-  console.log('window height: ', windowHeight.value);
-  if (windowWidth.value > 600) {
-    const backgroundHeight = windowHeight.value - 30;
-    console.log('background height: ', backgroundHeight);
-    const itemHeight = backgroundHeight / routes.length;
-    console.log('item height: ', itemHeight);
-    // const fontSize = Math.min(itemHeight * 0.5, 50);
-    const padding = Math.min(itemHeight * 0.5, 2);
-    console.log('padding: ', padding);
-    const fontSize = 90 / routes.length - padding * 2;
-    console.log('font size: ', fontSize);
-    return {
-      fontSize: `${fontSize}vh`,
-      padding: `${padding}rem`,
-    };
-  } else if (windowWidth.value > 380) {
-    return {
-      fontSize: '2rem',
-      padding: '0.5rem',
-    };
+  const containerSize = Math.min(windowHeight.value, windowWidth.value) * 0.9;
+  const itemSize = containerSize / routes.value.length;
+  const fontSize = itemSize * 0.6;
+  let padding;
+  if (windowWidth.value > 1000) {
+    padding =
+      (windowHeight.value * 0.9 - fontSize * routes.value.length) /
+      (2 * routes.value.length);
+  } else if (windowWidth.value > 600) {
+    padding =
+      (windowHeight.value * 0.8 - fontSize * routes.value.length) /
+      (2 * routes.value.length);
+  } else if (windowWidth.value > 450) {
+    padding =
+      (windowHeight.value * 0.7 - fontSize * routes.value.length) /
+      (2 * routes.value.length);
   } else {
-    return {
-      fontSize: '1.5rem',
-      padding: '0.5rem',
-    };
+    padding =
+      (windowHeight.value * 0.5 - fontSize * routes.value.length) /
+      (2 * routes.value.length);
   }
+  return {
+    fontSize: `${fontSize}px`,
+    padding: `${padding}px 0`,
+  };
 });
 
-const navbarNumbersStyle = computed(() => {
-  if (windowWidth.value > 600) {
-    const itemHeight = windowHeight.value / routes.length;
-    // const fontSize = Math.min(itemHeight * 0.3, 32);
-    const padding = Math.min(itemHeight * 0.05, 4);
-    const fontSize = 90 / routes.length - padding * 2;
-    return {
-      fontSize: `${fontSize}vh`,
-      padding: `${padding}px`,
-    };
-  } else {
-    return {
-      fontSize: '2rem',
-      // padding: '0.7rem',
-    };
-  }
-});
+// const navbarItemStyle = computed(() => {
+//   const containerSize = Math.min(windowHeight.value, windowWidth.value) * 0.9;
+//   const itemSize = containerSize / routes.value.length;
+//   const fontSize = itemSize * 0.5;
+//   const padding = itemSize * 0.1;
+//   return {
+//     fontSize: `${fontSize}px`,
+//     padding: `${padding}px`,
+//   };
+// });
 
 onMounted(() => {
   window.addEventListener('resize', updateWindowSize);
@@ -101,13 +88,13 @@ onUnmounted(() => {
           <nav>
             <ul>
               <li v-for="(route, index) in routes" :key="route.name">
-                <a href="#" @click="handleRouting($event, route.path)">
-                  <span class="navbar-numbers" :style="navbarNumbersStyle"
-                    >0{{ index + 1 }}.
-                  </span>
-                  <span class="navbar-item" :style="navbarItemStyle">{{
-                    route.name
-                  }}</span>
+                <a
+                  href="#"
+                  @click="handleRouting($event, route.path)"
+                  :style="navbarItemStyle"
+                >
+                  <span class="navbar-numbers">0{{ index + 1 }}. </span>
+                  <span class="navbar-item"> {{ route.name }}</span>
                 </a>
               </li>
             </ul>
@@ -206,10 +193,24 @@ onUnmounted(() => {
   z-index: 5;
 }
 
+.fullscreen-menu nav {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .fullscreen-menu nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .fullscreen-menu nav ul li {
@@ -220,15 +221,16 @@ nav ul li a {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.5rem;
+  margin: 0;
   text-decoration: none;
   color: var(--text-color);
   font-size: 3rem;
 }
 
-nav ul li a .navbar-numbers {
-  font-size: 2.5rem;
-}
+/* .navbar-numbers {
+
+  font-weight: thin;
+} */
 
 nav ul li a:hover {
   background-color: transparent;
@@ -247,7 +249,6 @@ nav ul li a:hover {
 .fullscreen-menu nav ul li a:hover {
   color: var(--link-color);
 }
-
 
 @media only screen and (max-width: 600px) {
   #main-navbar {
@@ -297,44 +298,14 @@ nav ul li a:hover {
     margin-left: -30%;
   }
 
-  /* .navbar-numbers {
-    font-size: 1.5rem;
-  } */
-
   .navbar a:hover {
     font-size: 3rem;
   }
 }
 
 @media only screen and (max-width: 400px) {
-  /* .menu-button {
-    transition: none;
-  } */
-
   .menu-button-open {
     transform: translate(3.6rem, 2.3rem);
   }
-  /* 
-  .menu-button .line {
-    width: 2rem;
-    height: 0.25rem;
-    background-color: var(--text-color);
-    border-radius: 10px;
-    transition: none;
-    transition: transform 0.3s linear 0.1s, opacity 0.3s linear 0.1s;
-  }
-
-  .menu-button-open .line1 {
-    transition: transform 0.3s linear;
-  }
-
-  .menu-button-open .line2 {
-    opacity: 0;
-    transition: opacity 0.3s linear;
-  }
-
-  .menu-button-open .line3 {
-    transition: transform 0.3s linear;
-  } */
 }
 </style>
