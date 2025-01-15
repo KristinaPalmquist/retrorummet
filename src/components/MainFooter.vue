@@ -39,8 +39,14 @@ const companyName = ref(t('companyName'));
       </div>
       <div class="footer-section contact">
         <h2>{{ t('footer.contact.header') }}</h2>
-        <p>{{ t('footer.contact.text1') }}: info@example.com</p>
-        <p>{{ t('footer.contact.text2') }}: {{ t('phone') }}</p>
+        <p>
+          <span class="email"> {{ t('footer.contact.text1') }}</span>
+          info@example.com
+        </p>
+        <p>
+          <span class="phone"> {{ t('footer.contact.text2') }}</span>
+          {{ t('phone') }}
+        </p>
       </div>
       <div class="footer-section social">
         <h2>{{ t('footer.social.header') }}</h2>
@@ -70,17 +76,18 @@ const companyName = ref(t('companyName'));
   width: clamp(300px, 80vw, 1200px);
   display: flex;
   justify-content: space-between;
-  margin: 0.5rem auto 2rem;
+  margin: 0 auto ;
+  gap: 1rem;
 }
 
 .footer-section {
   flex: 1;
-  padding: 1rem;
+  /*  padding: 1rem;*/
 }
 
-.footer-section h2 {
+/* .footer-section h2 {
   margin-bottom: 1rem;
-}
+} */
 
 .footer-section ul {
   list-style: none;
@@ -93,8 +100,21 @@ const companyName = ref(t('companyName'));
   margin-bottom: 0.5rem;
 }
 
-.footer-section ul li {
-  margin-left: 3rem;
+/* .about p {
+  font-size: 1.1rem;;
+} */
+
+.social,
+.links {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email,
+.phone {
+  font-weight: bold;
 }
 
 .footer-bottom {

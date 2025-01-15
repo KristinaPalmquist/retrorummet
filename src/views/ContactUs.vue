@@ -36,73 +36,77 @@ const clearForm = () => {
 </script>
 
 <template>
-  <div id="contact-us" >
+  <div id="contact-us">
     <div class="component-container">
-    <h1>Contact Us</h1>
-    <div class="contact-form" v-if="!showSentMessage">
-      <form @submit.prevent="handleSubmit">
-        <div>
-          <label for="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            v-model="name"
-            autocomplete="name"
-            required
-          />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            v-model="email"
-            autocomplete="email"
-            required
-          />
-        </div>
-        <div>
-          <label for="subject">Subject (optional)</label>
-          <input type="text" id="subject" v-model="subject" />
-        </div>
-        <div>
-          <label for="message">Message</label>
-          <textarea id="message" v-model="message" rows="7" required></textarea>
-        </div>
-        <div class="btn-div">
-          <BasicButton
-            :btnType="'button'"
-            :btnText="'Clear Fields'"
-            :btnFunction="clearForm"
-          />
-          <BasicButton
-            :btnType="'submit'"
-            :btnText="'Submit Message'"
-            :btnClass="'cta-btn'"
-            :btnFunction="handleSubmit"
-          />
-        </div>
-      </form>
-    </div>
-    <div class="contact-messages">
-      <div v-if="showSentMessage">
-        <div class="sent-message">
-          <h2>Sent message</h2>
-          <div
-            v-for="(content, key) in formContent"
-            :key="key"
-            class="message-item"
-          >
-            <span class="message-key">{{ key }}:</span>
-            <span class="message-value">{{ content }}</span>
+      <h1>{{!showSentMessage ? 'Contact Us' : 'Sent Message'}}</h1>
+      <div class="contact-form" v-if="!showSentMessage">
+        <form @submit.prevent="handleSubmit">
+          <div>
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              v-model="name"
+              autocomplete="name"
+              required
+            />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              v-model="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+          <div>
+            <label for="subject">Subject (optional)</label>
+            <input type="text" id="subject" v-model="subject" />
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              v-model="message"
+              rows="7"
+              required
+            ></textarea>
+          </div>
+          <div class="btn-div">
+            <BasicButton
+              :btnType="'button'"
+              :btnText="'Clear Fields'"
+              :btnFunction="clearForm"
+            />
+            <BasicButton
+              :btnType="'submit'"
+              :btnText="'Submit Message'"
+              :btnClass="'cta-btn'"
+              :btnFunction="handleSubmit"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="contact-messages">
+        <div v-if="showSentMessage">
+          <div class="sent-message">
+            <div
+              v-for="(content, key) in formContent"
+              :key="key"
+              class="message-item"
+            >
+              <span class="message-key">{{ key }}</span>
+              <span class="message-value">{{ content }}</span>
+            </div>
+          </div>
+          <div class="message">
+            <p>Thank you for contacting us! We will get back to you shortly.</p>
           </div>
         </div>
-        <div class="message">
-          <p>Thank you for contacting us!</p>
-          <p>We will get back to you shortly.</p>
-        </div>
       </div>
-    </div></div>
+    </div>
   </div>
 </template>
 
@@ -114,8 +118,8 @@ const clearForm = () => {
 }
 
 #contact-us h1 {
- text-align: center;
- margin-top: 2rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 /* #contact-us {
   display: grid;
@@ -156,7 +160,7 @@ const clearForm = () => {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .contact-messages .message {
@@ -165,28 +169,28 @@ const clearForm = () => {
 }
 
 .sent-message {
-  width: 100%;
+  width: max-content;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
+  padding: 2rem;
   text-align: left;
-  padding-left: 15%;
+
 }
 
 .message-item {
   display: grid;
-  grid-template-columns: 5rem 1fr;
+  grid-template-columns: 7rem 1fr;
   margin-bottom: 0.5rem;
+  gap: 2rem;
 }
 
 .message-key {
   font-weight: bold;
+  text-transform: capitalize;
 }
 
-.message-value {
-  padding-left: 1rem;
-}
 
 @media only screen and (max-width: 740px) {
   #contact-us {
@@ -196,15 +200,21 @@ const clearForm = () => {
     height: max-content;
   }
 
-  .contact-messages > div {
+  /* .contact-messages > div {
     gap: 5rem;
-  }
+  } */
   .btn-div {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    height: max-content
+    height: max-content;
+  }
+  .message-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+    gap: 0.3rem;
   }
 }
 </style>
