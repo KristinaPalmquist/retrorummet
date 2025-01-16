@@ -49,12 +49,13 @@ const displayTitle = computed(() => {
 
 .card-content {
   padding-top: 0;
-  /* padding-bottom: 0.5rem; */
+  padding-bottom: 1rem;
 }
 
 .card-content h2 {
   margin: 0;
-  padding-bottom: 0.5rem;
-  /* font-size: 1rem; */
+  font-size: 1.5rem;
 }
+
+
 </style>

@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import CategoryCard from '@/components/CategoryCard.vue';
 import { useI18n } from 'vue-i18n';
@@ -8,16 +8,6 @@ import categoriesData from '@/assets/data/categories.json';
 const { t } = useI18n();
 const router = useRouter();
 const categories = ref(categoriesData);
-// const categories = ref([]);
-
-const fetchCategories = async () => {
-  try {
-    const module = await import('@/assets/data/categories.json');
-    categories.value = module.default;
-  } catch (error) {
-    console.error('Error loading categories: ', error);
-  }
-};
 
 const navigateToCategory = (name) => {
   let categoryName = name.replace(/ /g, '-').toLowerCase();
@@ -26,10 +16,6 @@ const navigateToCategory = (name) => {
     params: { categoryName },
   });
 };
-
-onMounted(() => {
-  fetchCategories();
-});
 </script>
 
 <template>
@@ -52,12 +38,12 @@ onMounted(() => {
 .category-list {
   padding-top: 2rem;
   column-count: 4;
-  column-gap: 15px;
+  column-gap: 1rem;
 }
 .category-item {
-  display: inline-block;
   width: 100%;
   padding-bottom: 15px;
+  transition: transform 0.3s ease;
 }
 .category-item img {
   display: block;

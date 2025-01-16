@@ -1,6 +1,9 @@
 <script setup>
 import BasicButton from '../components/BasicButton.vue';
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const name = ref('');
 const email = ref('');
@@ -17,10 +20,10 @@ const showSentMessage = ref(false);
 
 const handleSubmit = () => {
   formContent.value = {
-    name: name.value,
-    email: email.value,
-    subject: subject.value,
-    message: message.value,
+    [t('contact.name')]: name.value,
+    [t('contact.email')]: email.value,
+    [t('contact.subject')]: subject.value,
+    [t('contact.message')]: message.value,
   };
   console.log(formContent.value);
   showSentMessage.value = true;
@@ -38,11 +41,11 @@ const clearForm = () => {
 <template>
   <div id="contact-us">
     <div class="component-container">
-      <h1>{{!showSentMessage ? 'Contact Us' : 'Sent Message'}}</h1>
+      <h1>{{ !showSentMessage ? t('contact.header') : t('contact.sent') }}</h1>
       <div class="contact-form" v-if="!showSentMessage">
         <form @submit.prevent="handleSubmit">
           <div>
-            <label for="name">Name</label>
+            <label for="name">{{ t('contact.name') }}</label>
             <input
               type="text"
               id="name"
@@ -52,7 +55,7 @@ const clearForm = () => {
             />
           </div>
           <div>
-            <label for="email">Email</label>
+            <label for="email">{{ t('contact.email') }}</label>
             <input
               type="email"
               id="email"
@@ -62,11 +65,11 @@ const clearForm = () => {
             />
           </div>
           <div>
-            <label for="subject">Subject (optional)</label>
+            <label for="subject">{{ t('contact.subject') }}</label>
             <input type="text" id="subject" v-model="subject" />
           </div>
           <div>
-            <label for="message">Message</label>
+            <label for="message">{{ t('contact.message') }}</label>
             <textarea
               id="message"
               v-model="message"
@@ -77,12 +80,12 @@ const clearForm = () => {
           <div class="btn-div">
             <BasicButton
               :btnType="'button'"
-              :btnText="'Clear Fields'"
+              :btnText="t('contact.clear')"
               :btnFunction="clearForm"
             />
             <BasicButton
               :btnType="'submit'"
-              :btnText="'Submit Message'"
+              :btnText="t('contact.send')"
               :btnClass="'cta-btn'"
               :btnFunction="handleSubmit"
             />
@@ -102,7 +105,7 @@ const clearForm = () => {
             </div>
           </div>
           <div class="message">
-            <p>Thank you for contacting us! We will get back to you shortly.</p>
+            <p>{{ t('contact.thanks') }}</p>
           </div>
         </div>
       </div>
@@ -176,12 +179,11 @@ const clearForm = () => {
   justify-content: space-evenly;
   padding: 2rem;
   text-align: left;
-
 }
 
 .message-item {
   display: grid;
-  grid-template-columns: 7rem 1fr;
+  grid-template-columns: 11rem 1fr;
   margin-bottom: 0.5rem;
   gap: 2rem;
 }
@@ -190,7 +192,6 @@ const clearForm = () => {
   font-weight: bold;
   text-transform: capitalize;
 }
-
 
 @media only screen and (max-width: 740px) {
   #contact-us {

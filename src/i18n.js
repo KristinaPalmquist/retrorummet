@@ -78,6 +78,20 @@ const messages = {
     categoriesView: {
       header: 'Kategorier',
     },
+    contact: {
+      name: 'Namn',
+    },
+    contact: {
+      header: 'Kontakta oss',
+      sent: 'Skickat meddelande',
+      name: 'Namn',
+      email: 'E-post',
+      subject: 'Ämne (valfritt)',
+      message: 'Meddelande',
+      clear: 'Töm Alla Fält',
+      send: 'Skicka meddelande',
+      thanks: 'Tack för att du kontaktar oss! Vi återkommer snart.',
+    },
     footer: {
       bottom: '© {currentYear} {companyName}. Alla rättigheter förbehållna.',
       about: {
@@ -193,6 +207,17 @@ const messages = {
     },
     categoriesView: {
       header: 'Shop by Category',
+    },
+    contact: {
+      header: 'Contact us',
+      sent: 'Sent message',
+      name: 'Name',
+      email: 'Email',
+      subject: 'Subject (optional)',
+      message: 'Message',
+      clear: 'Clear Fields',
+      send: 'Send Message',
+      thanks: 'Thank you for contacting us! We will get back to you shortly.',
     },
     footer: {
       about: {

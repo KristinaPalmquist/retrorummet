@@ -2,22 +2,25 @@
 import { nextTick, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import CategoryCardSmall from '@/components/CategoryCardSmall.vue';
+import { useI18n } from 'vue-i18n';
+import categoriesData from '@/assets/data/categories.json';
 
+const { t } = useI18n();
 const router = useRouter();
+const categories = ref(categoriesData);
 
-const categories = ref([]);
 const originalCategories = ref([]);
 const categoriesRow = ref(null);
 
-const fetchCategories = async () => {
-  try {
-    const module = await import('../assets/data/categories.json');
-    originalCategories.value = module.default;
-    categories.value = [...originalCategories.value];
-  } catch (error) {
-    console.error('Error loading categories: ', error);
-  }
-};
+// const fetchCategories = async () => {
+//   try {
+//     const module = await import('../assets/data/categories.json');
+//     originalCategories.value = module.default;
+//     categories.value = [...originalCategories.value];
+//   } catch (error) {
+//     console.error('Error loading categories: ', error);
+//   }
+// };
 
 const navigateToCategory = (name) => {
   let categoryName = name.replace(/ /g, '-').toLowerCase();
@@ -42,7 +45,7 @@ const handleScroll = () => {
 };
 
 onMounted(async () => {
-  await fetchCategories();
+  // await fetchCategories();
   await nextTick(); // Ensure the DOM is updated before adding the event listener
   if (categoriesRow.value) {
     categoriesRow.value.addEventListener('scroll', handleScroll);
@@ -93,7 +96,7 @@ const scrollNext = () => {
 }
 .categories-row {
   position: relative;
-  height: calc(213.99px * 1.05);
+  height: calc(238px * 1.05);
   display: flex;
   align-items: center;
   overflow-x: auto;
@@ -141,7 +144,6 @@ const scrollNext = () => {
   z-index: 2;
 }
 
-
 .fade-left,
 .fade-right {
   position: absolute;
@@ -169,5 +171,4 @@ const scrollNext = () => {
     var(--gradient-end)
   );
 }
-
 </style>
