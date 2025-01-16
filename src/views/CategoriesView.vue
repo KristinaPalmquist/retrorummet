@@ -1,12 +1,9 @@
 <script setup>
-
-
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import CategoryCard from '@/components/CategoryCard.vue';
 import { useI18n } from 'vue-i18n';
 import categoriesData from '@/assets/data/categories.json';
-
 
 const { t } = useI18n();
 const router = useRouter();
@@ -37,7 +34,7 @@ onMounted(() => {
 
 <template>
   <div id="categories-view" class="component-container">
-    <h1>Shop by Category</h1>
+    <h1>{{ t('categoriesView.header') }}</h1>
     <div class="category-list">
       <div
         v-for="category in categories"

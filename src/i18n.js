@@ -75,6 +75,9 @@ const messages = {
         },
       },
     },
+    categoriesView: {
+      header: 'Kategorier',
+    },
     footer: {
       bottom: '© {currentYear} {companyName}. Alla rättigheter förbehållna.',
       about: {
@@ -187,6 +190,9 @@ const messages = {
           text: 'We conduct our business with honesty and transparency, building trust with our customers and partners.',
         },
       },
+    },
+    categoriesView: {
+      header: 'Shop by Category',
     },
     footer: {
       about: {
