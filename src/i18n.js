@@ -103,6 +103,14 @@ const messages = {
     search: {
       placeholder: 'Sök produkter',
     },
+    // Data
+    categories: {
+      chair: 'Stolar',
+      table: 'Bord',
+      storage: 'Förvaring',
+      light: 'Belysning',
+      decor: 'Dekoration',
+    },
   },
   en: {
     // Facts
@@ -207,6 +215,15 @@ const messages = {
     // Components
     search: {
       placeholder: 'Search products',
+    },
+
+    // Data
+    categories: {
+      chair: 'Chairs',
+      table: 'Tables',
+      storage: 'Storage',
+      light: 'Lighting',
+      decor: 'Decoration',
     },
   },
 };

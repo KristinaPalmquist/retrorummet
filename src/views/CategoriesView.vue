@@ -1,10 +1,17 @@
 <script setup>
+
+
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import CategoryCard from '@/components/CategoryCard.vue';
+import { useI18n } from 'vue-i18n';
+import categoriesData from '@/assets/data/categories.json';
 
+
+const { t } = useI18n();
 const router = useRouter();
-const categories = ref([]);
+const categories = ref(categoriesData);
+// const categories = ref([]);
 
 const fetchCategories = async () => {
   try {

@@ -1,5 +1,6 @@
 <script setup>
 import BasicCard from '@/components/BasicCard.vue';
+import { useI18n } from 'vue-i18n';
 
 const props = defineProps({
   category: {
@@ -8,17 +9,23 @@ const props = defineProps({
   },
 });
 
+const { t } = useI18n();
+
 const resolveImagePath = (name) => {
   let categoryName = name.replace(/ /g, '-').toLowerCase();
   let path = `../assets/img/${categoryName}/${props.category.imagename}.jpg`;
   return new URL(path, import.meta.url).href;
+};
+
+const resolveCategoryName = (name) => {
+  return t(`categories.${name}`);
 };
 </script>
 
 <template>
   <div id="category-card">
     <BasicCard
-      :title="category.name"
+      :title="resolveCategoryName(category.name)"
       :imageSrc="resolveImagePath(category.name)"
     />
   </div>

@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, watch } from 'vue';
 
 const props = defineProps({
   title: {
@@ -21,42 +21,6 @@ const { title, imageSrc, price } = props;
 const currentImageIndex = ref(0);
 const images = ref(Array.isArray(imageSrc) ? imageSrc : [imageSrc]);
 
-// const cycleImages = () => {
-//   currentImageIndex.value = (currentImageIndex.value + 1) % images.value.length;
-
-// };
-
-// let intervalId;
-
-onMounted(() => {
-  // console.log(images.value[0]);
-  //   if (isArray && images.value.length > 1) {
-  //     intervalId = setInterval(cycleImages, 5000);
-  //   }
-});
-
-// onUnmounted(() => {
-//   if (intervalId) {
-//     clearInterval(intervalId);
-//   }
-// });
-
-// watch(
-//   () => imageSrc,
-//   (newVal) => {
-//     const isArray = Array.isArray(newVal);
-//     images.value = isArray ? newVal : [newVal];
-//     currentImageIndex.value = 0;
-//     if (isArray && images.value.length > 1) {
-//       if (intervalId) {
-//         clearInterval(intervalId);
-//       }
-//       intervalId = setInterval(cycleImages, 5000);
-//     } else if (intervalId) {
-//       clearInterval(intervalId);
-//     }
-//   }
-// );
 
 watch(
   () => imageSrc,
