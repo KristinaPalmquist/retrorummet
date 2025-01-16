@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div id="about-us">
+  <div id="about-view">
     <div class="component-container">
       <h1 class="header-about">About Us</h1>
       <section class="introduction">
@@ -73,12 +73,11 @@
 </template>
 
 <style scoped>
- #about-us {
-
+#about-view {
   width: 100%;
   overflow: hidden;
- margin: 0;
-  padding: 0; 
+  margin: 0;
+  padding: 0;
 }
 .header-about {
   margin-bottom: 2rem;
@@ -86,12 +85,13 @@
 
 .introduction {
   padding: 0 0 5rem 0;
+  position: relative;
 }
 
 .team,
 .values {
   padding: 5rem 0;
-  /* */
+  position: relative;
 }
 
 .image {
@@ -203,9 +203,51 @@
 
 .values .image3 {
   grid-area: image3;
-  background-image: url('../assets/img/sideboard/uno.jpg');
+  background-image: url('../assets/img/storage/uno.jpg');
   width: 60vw;
   margin-left: -20vw;
-  /* height: 50vh; */
+}
+
+@media (max-width: 768px) {
+  /* .introduction {
+    grid-template-areas:
+      'content-about1'
+      'image1'
+      'content-about2'
+      'content-about3';
+  }
+
+  .team {
+    grid-template-areas:
+      'header-team'
+      'content-team'
+      'image2';
+  }
+
+  .values {
+    grid-template-areas:
+      'header-values'
+      'content-values'
+      'image3';
+  }
+
+  #about-view h1 {
+    text-align: center;
+  } */
+
+  /* .image1 {
+ position: absolute; 
+  margin-left: 0vw;
+  left: 0%; 
+  transform: translateX(-20%);
+  } */
+
+  /* .image2 {
+
+  }
+
+  .image3 {
+
+  } */
 }
 </style>

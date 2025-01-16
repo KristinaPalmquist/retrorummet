@@ -157,10 +157,10 @@ textarea:-moz-autofill {
 @media only screen and (max-width: 768px) {
   .component-container {
     width: calc(100% - 2rem);
-    margin: 0;
-    padding: 0 1rem;
-    overflow: hidden;
+    margin: 0 auto;
   }
+
+ 
 
   .message {
     font-size: 1.5rem;

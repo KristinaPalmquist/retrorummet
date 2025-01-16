@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
-import AboutUs from '@/views/AboutUs.vue';
-import ContactUs from '@/views/ContactUs.vue';
+import AboutView from '@/views/AboutView.vue';
+import ContactView from '@/views/ContactView.vue';
 import MainCategories from '@/views/CategoriesView.vue';
 import CategoryProductsView from '@/views/CategoryProductsView.vue';
 import ProductDetailsView from '@/views/ProductDetailsView.vue';
@@ -16,13 +16,12 @@ const routes = [
   },
   {
     path: '/about',
-    component: AboutUs,
+    component: AboutView,
   },
-  // {
-  //   path: '/cart',
-  //   component: ShowCart,
-  // },
-  { path: '/categories', component: MainCategories },
+  {
+    path: '/categories',
+    component: MainCategories,
+  },
   {
     path: '/categories/:categoryName',
     name: 'CategoryProducts',
@@ -42,7 +41,7 @@ const routes = [
   {
     path: '/contact',
     name: 'Contact',
-    component: ContactUs,
+    component: ContactView,
   },
   { path: '/products', name: 'Products', component: ProductsView },
   {
@@ -52,12 +51,6 @@ const routes = [
   },
 ];
 
-// const router = createRouter({
-//   history: createWebHistory(import.meta.env.BASE_URL),
-//   routes,
-//   // routes: routes,
-//   // linkActiveClass: 'active'
-// });
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
