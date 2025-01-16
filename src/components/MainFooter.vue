@@ -128,6 +128,7 @@ const companyName = ref(t('companyName'));
   #main-footer .footer-content {
     width: 100%;
     flex-direction: column;
+    align-items: center;
     text-align: center;
   }
   .footer-section {
