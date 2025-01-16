@@ -196,19 +196,19 @@ a {
   .company-name {
     font-size: 1.8rem;
   }
-}
-
-@media only screen and (max-width: 600px) {
-  #main-header {
-    height: auto;
-    margin-bottom: 0.5rem;
-  }
 
   .header-content {
     width: 100%;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #main-header {
+    height: auto;
+    margin-bottom: 0.5rem;
   }
 
   .company-name {
