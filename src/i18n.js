@@ -93,6 +93,12 @@ const messages = {
         header: 'Följ oss',
       },
     },
+    notFound: {
+      header: 'Sidan hittades inte!',
+      text: 'Tyvärr, sidan du letar efter finns inte. Om du har klickat på en länk kan sidan ha tagits bort sedan länken skapades.',
+      back: 'Gå tillbaka till startsidan',
+      products: 'Se alla produkter',
+    },
     // Components
     search: {
       placeholder: 'Sök produkter',
@@ -160,7 +166,6 @@ const messages = {
       },
       values: {
         header: 'Our values',
-
         satisfaction: {
           header: 'Customer Satisfaction',
           text: "We prioritize our customers' needs and strive to exceed their expectations with every purchase.",
@@ -192,6 +197,12 @@ const messages = {
         header: 'Follow us',
       },
       bottom: '© {currentYear} {companyName}. All rights reserved.',
+    },
+    notFound: {
+      header: 'Page not found!',
+      text: 'Sorry, the page you are looking for does not exist. If you clicked on a link, the page may have been removed since the link was created.',
+      back: 'Go back to the start page',
+      products: 'See all products',
     },
     // Components
     search: {

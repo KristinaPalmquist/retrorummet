@@ -1,35 +1,34 @@
-<script setup></script>
+<script setup>
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+</script>
 
 <template>
   <div id="not-found" class="component-container">
-    <h1>404 - Page Not Found</h1>
-    <p class="large">Sorry, the page you are looking for does not exist.</p>
-    <router-link to="/">Go back to Home</router-link>
+    <h1>{{ t('notFound.header') }}</h1>
+    <p class="large">{{ t('notFound.text') }}</p>
+    <router-link to="/" class="back">{{ t('notFound.back') }}</router-link>
+
+    <router-link to="/products" class="products">{{
+      t('notFound.products')
+    }}</router-link>
   </div>
 </template>
 
 <style scoped>
 #not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 2rem;
 }
-/* 
-.not-found h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+
+.back,
+.products {
+  padding: 2rem 0;
 }
 
-.not-found p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.not-found a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.not-found a:hover {
-  text-decoration: underline;
-} */
 </style>
