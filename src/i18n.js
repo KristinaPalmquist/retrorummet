@@ -44,6 +44,37 @@ const messages = {
         header: 'Välj bland våra kategorier',
       },
     },
+    about: {
+      header: 'Om oss',
+      introduction: {
+        text: {
+          welcome:
+            'Välkommen till {companyName}, din bästa plats för att hitta  unika och tidlösa möbler för ett hem med själ. Vi främjar hållbarhet genom att ge möbler nytt liv. och erbjuder dig möbler med historia.',
+          online:
+            'Under åren har vi utökat vårt sortiment och våra tjänster, vilket har nått miljömedvetna kunder över hela världen. Vi bedriver vår verksamhet uteslutande online, utan fysisk butik, vilket säkerställer att vår verksamhet är så miljövänlig som möjligt.',
+          how: 'Så här fungerar vår webbplats: Titta igenom vårt sortiment och hitta en produkt som du gillar. På varje produktsida finns ett formulär som du kan använda för att kontakta oss med frågor eller kommentarer. Detta formulär hjälper oss att koppla din fråga eller kommentar till rätt produkt, vilket säkerställer en smidig och effektiv kommunikationsprocess.',
+        },
+      },
+      content: {
+        header: 'Vårt team',
+        text: 'Vårt team består av engagerade personer som arbetar tillsammans för att göra heminredning mer hållbar. Alla spelar en viktig roll, från att hjälpa kunder till att hitta de bästa produkterna.',
+      },
+      values: {
+        header: 'Våra värderingar',
+        satisfaction: {
+          header: 'Kundnöjdhet',
+          text: 'Vi prioriterar våra kunders behov och strävar efter att överträffa deras förväntningar vid varje köp.',
+        },
+        sustainability: {
+          header: 'Hållbarhet',
+          text: 'Vi är engagerade i att minska avfall genom att främja återanvändning och återvinning av möbler och dekorationer.',
+        },
+        integrity: {
+          header: 'Integritet',
+          text: 'Vi bedriver vår verksamhet med ärlighet och transparens, och bygger förtroende med våra kunder och partners.',
+        },
+      },
+    },
     footer: {
       bottom: '© {currentYear} {companyName}. Alla rättigheter förbehållna.',
       about: {
@@ -52,7 +83,6 @@ const messages = {
       },
       links: {
         header: 'Snabblänkar',
-        
       },
       contact: {
         header: 'Kontakta oss',
@@ -113,6 +143,38 @@ const messages = {
         header: 'Browse our categories',
       },
     },
+    about: {
+      header: 'About us',
+      introduction: {
+        text: {
+          welcome:
+            'Welcome to {companyName}, your go-to destination for preowned furniture and decorations. Our mission is to promote sustainable living by offering a curated selection of unique and timeless pieces.',
+          online:
+            'Over the years, we have expanded our collection and services, reaching eco-conscious customers worldwide. We operate exclusively online, with no physical showroom, ensuring that our operations are as eco-friendly as possible.',
+          how: "Here's how our site works: Browse through our collection and find an item that you like. Each item page has a form that you can use to contact us with any questions or comments. This form helps us know which item your question or comment is linked to, ensuring a smooth and efficient communication process.",
+        },
+      },
+      content: {
+        header: 'Our team',
+        text: 'Our team is composed of dedicated professionals who are passionate about sustainable living. From our customer service representatives to our product curators, everyone plays a crucial role in our mission to make home decor more sustainable.',
+      },
+      values: {
+        header: 'Our values',
+
+        satisfaction: {
+          header: 'Customer Satisfaction',
+          text: "We prioritize our customers' needs and strive to exceed their expectations with every purchase.",
+        },
+        sustainability: {
+          header: 'Sustainability',
+          text: 'We are committed to reducing waste by promoting the reuse and recycling of furniture and decorations.',
+        },
+        integrity: {
+          header: 'Integrity',
+          text: 'We conduct our business with honesty and transparency, building trust with our customers and partners.',
+        },
+      },
+    },
     footer: {
       about: {
         header: 'About us',
@@ -120,7 +182,6 @@ const messages = {
       },
       links: {
         header: 'Quick Links',
-        
       },
       contact: {
         header: 'Contact us',

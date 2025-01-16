@@ -1,30 +1,27 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+const companyName = ref(t('companyName'));
+</script>
 
 <template>
   <div id="about-view">
     <div class="component-container">
-      <h1 class="header-about">About Us</h1>
+      <h1 class="header-about">{{ t('about.header') }}</h1>
       <section class="introduction">
         <!-- <div class="content-about"> -->
         <p class="content-about1">
-          Welcome to RetroRummet, your go-to destination for preowned furniture
-          and decorations. Our mission is to promote sustainable living by
-          offering a curated selection of unique and timeless pieces.
+          {{ t('about.introduction.text.welcome', { companyName }) }}
         </p>
         <div class="empty-about1"></div>
         <p class="content-about2">
-          Over the years, we have expanded our collection and services, reaching
-          eco-conscious customers worldwide. We operate exclusively online, with
-          no physical showroom, ensuring that our operations are as eco-friendly
-          as possible.
+          {{ t('about.introduction.text.online') }}
         </p>
         <div class="empty-about2"></div>
         <p class="content-about3">
-          Here's how our site works: Browse through our collection and find an
-          item that you like. Each item page has a form that you can use to
-          contact us with any questions or comments. This form helps us know
-          which item your question or comment is linked to, ensuring a smooth
-          and efficient communication process.
+          {{ t('about.introduction.text.how') }}
         </p>
         <div class="empty-about3"></div>
         <!-- </div> -->
@@ -33,35 +30,33 @@
       </section>
 
       <section class="team">
-        <h2 class="header-team">Our Team</h2>
+        <h2 class="header-team">
+          {{ t('about.content.header') }}
+        </h2>
         <div class="empty-team1"></div>
         <p class="content-team">
-          Our team is composed of dedicated professionals who are passionate
-          about sustainable living. From our customer service representatives to
-          our product curators, everyone plays a crucial role in our mission to
-          make home decor more sustainable.
+          {{ t('about.content.text') }}
         </p>
         <div class="empty-team2"></div>
         <div class="image image2"></div>
       </section>
       <section class="values">
-        <h2 class="header-values">Our Values</h2>
+        <h2 class="header-values">{{ t('about.values.header') }}</h2>
         <div class="content-values">
           <div>
-            <h2>Customer Satisfaction</h2>
-            We prioritize our customers' needs and strive to exceed their
-            expectations with every purchase.
+            <h2>{{ t('about.values.satisfaction.header') }}</h2>
+            <p>{{ t('about.values.satisfaction.text') }}</p>
           </div>
           <div>
-            <h2>Sustainability</h2>
-            We are committed to reducing waste by promoting the reuse and
-            recycling of furniture and decorations.
+            <h2>{{ t('about.values.sustainability.header') }}</h2>
+            <p>{{ t('about.values.sustainability.text') }}</p>
           </div>
 
           <div>
-            <h2>Integrity</h2>
-            We conduct our business with honesty and transparency, building
-            trust with our customers and partners.
+            <h2>{{ t('about.values.integrity.header') }}</h2>
+            <p>
+              {{ t('about.values.integrity.text') }}
+            </p>
           </div>
           <div class="empty-values"></div>
         </div>
@@ -229,13 +224,14 @@
       'header-values'
       'content-values'
       'image3';
-  }
+  } */
 
   #about-view h1 {
     text-align: center;
-  } */
-
-  /* .image1 {
+    padding: 1.5rem 0 0 0;
+  }
+  /*
+ .image1 {
  position: absolute; 
   margin-left: 0vw;
   left: 0%; 
