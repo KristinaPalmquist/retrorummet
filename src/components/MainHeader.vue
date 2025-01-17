@@ -21,7 +21,7 @@ const isMobile = ref(false);
 
 // const showLoginBtn = computed(() => !isOpen.value);
 
-const emits = defineEmits(['headerHeight']);
+const emits = defineEmits(['headerHeight', 'update:isOpen']);
 
 const handleScroll = () => {
   if (!isOpen.value) {
@@ -70,6 +70,12 @@ onUpdated(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
   window.removeEventListener('resize', checkIfMobile);
+});
+
+watch(isOpen, (newVal) => {
+  if (newVal) {
+    emits('update:isOpen', isOpen.value);
+  }
 });
 
 watch(headerHeight, (newHeight) => {
@@ -156,7 +162,7 @@ a {
 .company-name {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--text-color);
 }
 
 .nav-btns {
@@ -202,6 +208,14 @@ a {
     align-items: center;
     gap: 1rem;
   }
+
+  .open .header-content {
+    width: clamp(300px, 80vw, 1200px);
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem auto;
+    align-items: flex-end;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -238,7 +252,6 @@ a {
   .header-content {
     width: 100%;
   }
- 
 
   .nav-btns {
     display: grid;

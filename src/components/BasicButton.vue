@@ -41,7 +41,18 @@ watch(locale, () => {
 
 <style scoped>
 button {
-  appearance: none;
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 3px;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  transition: background-color 0.3s ease;
+
+  /* appearance: none;
   background-color: var(--button-1-color);
 
   background-image: linear-gradient(
@@ -71,11 +82,13 @@ button {
   vertical-align: middle;
   white-space: nowrap;
   word-wrap: break-word;
-  z-index: 1;
+  z-index: 1; */
 }
 
 button:hover {
-  background-position: -20px -20px;
+  filter: brightness(1.4);
+  /* background-color: #333;  */
+  /* background-position: -20px -20px; */
 }
 
 button:disabled {
@@ -100,8 +113,14 @@ button:-webkit-details-marker {
 
 button.cta-btn {
   background-color: var(--link-color);
-  background-image: var(--button-gradient);
-  color: #fff;
+  color: var(--text-color);
+  /* background-image: var(--button-gradient);
+  color: #fff; */
+}
+
+button.cta-btn:hover {
+  filter: brightness(1.1);
+  /* background-color: var(--link-color)  darken(30%); */
 }
 
 button.small-icon {

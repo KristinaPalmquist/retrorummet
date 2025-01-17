@@ -76,18 +76,14 @@ const companyName = ref(t('companyName'));
   width: clamp(300px, 80vw, 1200px);
   display: flex;
   justify-content: space-between;
-  margin: 0 auto ;
+  margin: 0 auto;
   gap: 1rem;
 }
 
 .footer-section {
   flex: 1;
-  /*  padding: 1rem;*/
+  margin-bottom: 2rem;
 }
-
-/* .footer-section h2 {
-  margin-bottom: 1rem;
-} */
 
 .footer-section ul {
   list-style: none;
@@ -131,16 +127,5 @@ const companyName = ref(t('companyName'));
     align-items: center;
     text-align: center;
   }
-  .footer-section {
-    margin-bottom: 1rem;
-  }
-  .footer-section ul li {
-    margin-left: 0;
-  }
-  /* 
-  .footer-section.about,
-  .footer-section.links {
-    display: none;
-  } */
 }
 </style>

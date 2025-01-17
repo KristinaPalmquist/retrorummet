@@ -50,11 +50,19 @@ const updateWindowSize = () => {
 const navbarItemStyle = computed(() => {
   const containerSize = Math.min(windowHeight.value, windowWidth.value) * 0.9;
   const itemSize = containerSize / routes.value.length;
-  const fontSize = itemSize * 0.6;
+  const fontSize = itemSize * 0.4;
   let padding;
   if (windowWidth.value > 1000) {
     padding =
-      (windowHeight.value * 0.9 - fontSize * routes.value.length) /
+      (windowHeight.value * 0.7 - fontSize * routes.value.length) /
+      (2 * routes.value.length);
+    } else if (windowWidth.value > 900) {
+    padding =
+      (windowHeight.value * 0.6 - fontSize * routes.value.length) /
+      (2 * routes.value.length);
+  } else if (windowWidth.value > 800) {
+    padding =
+      (windowHeight.value * 0.5 - fontSize * routes.value.length) /
       (2 * routes.value.length);
   } else if (windowWidth.value > 600) {
     padding =
@@ -69,6 +77,7 @@ const navbarItemStyle = computed(() => {
       (windowHeight.value * 0.5 - fontSize * routes.value.length) /
       (2 * routes.value.length);
   }
+  console.log(padding);
   return {
     fontSize: `${fontSize}px`,
     padding: `${padding}px 0`,
@@ -231,10 +240,6 @@ nav ul li a {
   font-size: 3rem;
 }
 
-/* .navbar-numbers {
-
-  font-weight: thin;
-} */
 
 nav ul li a:hover {
   background-color: transparent;
