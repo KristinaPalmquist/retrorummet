@@ -78,8 +78,15 @@ const messages = {
     categoriesView: {
       header: 'Kategorier',
     },
-    contact: {
-      name: 'Namn',
+    products: {
+      noMatch: {
+        header: 'Inga produkter hittades som matchar din sökning',
+        text: 'Här är några tips som kanske kan hjälpa:',
+        tips1: 'Kontrollera stavningen',
+        tips2: 'Prova att använda andra sökord',
+        tips3: 'Prova en mer generell sökning',
+      },
+      header: 'Produkter',
     },
     contact: {
       header: 'Kontakta oss',
@@ -91,6 +98,19 @@ const messages = {
       clear: 'Töm Alla Fält',
       send: 'Skicka meddelande',
       thanks: 'Tack för att du kontaktar oss! Vi återkommer snart.',
+    },
+    notFound: {
+      header: 'Sidan hittades inte!',
+      text: 'Tyvärr, sidan du letar efter finns inte. Om du har klickat på en länk kan sidan ha tagits bort sedan länken skapades.',
+      back: 'Gå tillbaka till startsidan',
+      products: 'Se alla produkter',
+    },
+    // Components
+    button: {
+      text: 'Klicka',
+    },
+    search: {
+      placeholder: 'Sök produkter',
     },
     footer: {
       bottom: '© {currentYear} {companyName}. Alla rättigheter förbehållna.',
@@ -109,16 +129,6 @@ const messages = {
       social: {
         header: 'Följ oss',
       },
-    },
-    notFound: {
-      header: 'Sidan hittades inte!',
-      text: 'Tyvärr, sidan du letar efter finns inte. Om du har klickat på en länk kan sidan ha tagits bort sedan länken skapades.',
-      back: 'Gå tillbaka till startsidan',
-      products: 'Se alla produkter',
-    },
-    // Components
-    search: {
-      placeholder: 'Sök produkter',
     },
     // Data
     categories: {
@@ -208,6 +218,16 @@ const messages = {
     categoriesView: {
       header: 'Shop by Category',
     },
+    products: {
+      noMatch: {
+        header: 'No products found that match your search',
+        text: 'Here are a few suggestion that might help you:',
+        tips1: 'Double check your spelling',
+        tips2: 'Try using different keywords',
+        tips3: 'Try a more general search',
+      },
+      header: 'Produkter',
+    },
     contact: {
       header: 'Contact us',
       sent: 'Sent message',
@@ -218,6 +238,19 @@ const messages = {
       clear: 'Clear Fields',
       send: 'Send Message',
       thanks: 'Thank you for contacting us! We will get back to you shortly.',
+    },
+    notFound: {
+      header: 'Page not found!',
+      text: 'Sorry, the page you are looking for does not exist. If you clicked on a link, the page may have been removed since the link was created.',
+      back: 'Go back to the start page',
+      products: 'See all products',
+    },
+    // Components
+    button: {
+      text: 'Click',
+    },
+    search: {
+      placeholder: 'Search products',
     },
     footer: {
       about: {
@@ -236,16 +269,6 @@ const messages = {
         header: 'Follow us',
       },
       bottom: '© {currentYear} {companyName}. All rights reserved.',
-    },
-    notFound: {
-      header: 'Page not found!',
-      text: 'Sorry, the page you are looking for does not exist. If you clicked on a link, the page may have been removed since the link was created.',
-      back: 'Go back to the start page',
-      products: 'See all products',
-    },
-    // Components
-    search: {
-      placeholder: 'Search products',
     },
 
     // Data

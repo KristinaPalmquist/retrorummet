@@ -3,8 +3,12 @@ import { computed, ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useStore } from '@/store';
 import ProductCard from '@/components/ProductCard.vue';
+import { useI18n } from 'vue-i18n';
 
 const emit = defineEmits(['productClicked']);
+
+const {t} = useI18n();
+
 const store = useStore();
 const router = useRouter();
 
@@ -78,23 +82,18 @@ onMounted(() => {
 
 <template>
   <div id="products-view" class="component-container">
-    <div v-if="filteredProducts.length === 0" class="empty-search">
-      <h2>We couldn't find any results that match your search.</h2>
-      <p>Here are a few things you can try:</p>
+    <div v-if="filteredProducts.length === 0" class="no-match">
+      <h2>{{ t('products.noMatch.header') }}</h2>
+      <p>{{ t('products.noMatch.text') }}</p>
       <ul>
-        <!-- <li>Double-check your spelling.</li> -->
-        <li>Check for any spelling errors.</li>
-        <!-- <li>Please try adjusting your search terms.</li>
-        <li>Use different keywords.</li> -->
-        <li>Try adjusting your search term.</li>
-        <!-- <li>Try a more general search term.</li>
-        <li>Broaden your search terms.</li> -->
-        <li>Test a more general search term.</li>
+        <li>{{ t('products.noMatch.tips1') }}</li>
+        <li>{{ t('products.noMatch.tips2') }}</li>
+        <li>{{ t('products.noMatch.tips3') }}</li>
       </ul>
 
     </div>
     <div v-else>
-      <h1>Products</h1>
+      <h1>{{ t('products.header') }}</h1>
       <div class="product-list">
         <div
           v-for="product in filteredProducts"
@@ -114,10 +113,9 @@ onMounted(() => {
 
 <style scoped>
 /* #products-view {
-  padding: 2rem;
 } */
 
-.empty-search {
+.no-match {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,11 +124,11 @@ onMounted(() => {
   /* text-align: center; */
   /* margin: 4rem 0; */
 }
-.empty-search p {
+.no-match p {
   margin: 1rem;
 }
 
-.empty-search ul {
+.no-match ul {
   width: max-content;
   margin: 0 auto;
   /* list-style-type: none; */

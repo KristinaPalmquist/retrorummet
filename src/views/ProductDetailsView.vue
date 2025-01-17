@@ -1,13 +1,12 @@
 <script setup>
-import { computed, ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-// import { useStore } from '../store';
 import ProductContact from '../components/ProductContact.vue';
-// import BasicButton from '../components/BasicButton.vue';
+// import { useI18n } from 'vue-i18n';
+
+// const {t} = useI18n();
 
 const route = useRoute();
-// const router = useRouter();
-// const store = useStore();
 const { categoryName, productName } = route.params;
 
 const product = ref(null);
@@ -39,32 +38,6 @@ const formatCurrency = (value) => {
     currency: 'USD',
   }).format(value);
 };
-
-// const averageRating = computed(() => {
-//   if (!product.value || !product.value.reviews) return 0;
-//   const totalRating = product.value.reviews.reduce(
-//     (sum, review) => sum + review.rating,
-//     0
-//   );
-//   return (totalRating / product.value.reviews.length).toFixed(1);
-// });
-
-// const addToCart = () => {
-//   store.dispatch('addToCart', product.value);
-//   store.dispatch('saveCart');
-//   message.value = 'Product added to cart!';
-//   showMessage.value = true;
-// };
-
-// const goToCart = () => {
-//   router.push('/cart');
-// };
-
-// const renderStars = (rating) => {
-//   const fullStar = '★';
-//   const emptyStar = '☆';
-//   return fullStar.repeat(rating) + emptyStar.repeat(5 - rating);
-// };
 
 onMounted(() => {
   fetchProduct();

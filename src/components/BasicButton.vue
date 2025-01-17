@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
 
-// import { onBeforeMount, ref } from 'vue';
+const { t, locale } = useI18n();
 
 const props = defineProps([
   'btnType',
@@ -13,19 +14,16 @@ const props = defineProps([
 ]);
 
 const btnType = ref(props.btnType || 'button');
-const btnText = ref(props.btnText || 'Click');
+const btnText = ref(props.btnText || t('button.text'));
 const btnClass = ref(props.btnClass || '');
 const btnColor = ref(props.btnColor || '');
 const btnTextColor = ref(props.btnTextColor || '');
 const btnFunction =
   props.btnFunction || (() => console.log('No function provided'));
 
-// onBeforeMount(() => {
-//   if (!btnClass.value) {
-//     btnColor.value = '#fff';
-//     btnTextColor.value = '#000';
-//   }
-// });
+watch(locale, () => {
+  btnText.value = props.btnText || t('button.text');
+});
 </script>
 
 <template>
