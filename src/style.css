@@ -10,7 +10,8 @@
 }
 
 h1 {
-  font-family: Helvetica, 'Helvetica Neue', arial, sans-serif;
+  font-family: 'JetBrains Mono', monospace;
+  /* font-family: Helvetica, 'Helvetica Neue', arial, sans-serif; */
   font-size: 35px;
   font-style: normal;
   font-weight: 400;
@@ -30,7 +31,7 @@ h3 {
 h2,
 h3,
 button {
-  /* font-family: 'JetBrains Mono', monospace; */
+  font-family: 'JetBrains Mono', monospace;
   font-optical-sizing: auto;
   text-align: center;
   margin: 0.5rem 0;

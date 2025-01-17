@@ -171,7 +171,7 @@ onMounted(() => {
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-  width: clamp(300px, 50%, 900px);
+  width: clamp(500px, 50%, 900px);
   text-align: center;
   z-index: 2;
 }
@@ -189,7 +189,7 @@ onMounted(() => {
 }
 
 .hero-text p {
-  font-size: rem;
+  font-size: 1.65rem;
   line-height: 2rem;
 }
 
@@ -225,17 +225,16 @@ onMounted(() => {
   overflow: hidden;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
   .glass-card {
+    margin-top: 2rem;;
     padding: 1rem;
   }
 
-  .hero-text h1 {
-    font-size: 2rem;
-  }
+}
 
-  .hero-text p {
-    font-size: 1rem;
-  }
+@media only screen and (max-width: 600px) {
+
+
 }
 </style>
